@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Каталог пеших маршрутов и экологических троп России: описание, расстояния и подготовка к прогулке.">
+  <title>Главная — Экотропы России</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261110">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/routes.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-success" href="index.html">Экотропы России</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="site-menu">
+          <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li><li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li></ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4" id="main">
+    <section class="hero p-3 p-md-4 rounded mb-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-6"><p class="text-success fw-bold">Прогулки на природе</p><h1>Пешие маршруты и экотропы России</h1><p class="lead">Познакомьтесь с маршрутами, сравните расстояния и подготовьтесь к прогулке.</p><a class="btn btn-success" href="catalog.html">Выбрать маршрут</a></div>
+        <div class="col-12 col-lg-6"><img src="images/forest.jpg" class="img-fluid rounded hero-photo" width="900" height="599" alt="Солнечные лучи в зелёном лесу — иллюстрация прогулки на природе"></div>
+      </div>
+    </section>
+    <section class="mb-5" aria-labelledby="advantages"><h2 class="h3 mb-3" id="advantages">Что поможет с выбором</h2><div class="row g-3">
+      <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Понятные описания</h3><p class="mb-0">Краткая информация о тропе и ссылка на официальный источник.</p></div></div>
+      <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Поиск по маршрутам</h3><p class="mb-0">Выбирайте по названию, региону, длине и условной сложности.</p></div></div>
+      <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Подготовка к прогулке</h3><p class="mb-0">Список вещей и основные советы собраны на отдельной странице.</p></div></div>
+    </div></section>
+    <section class="mb-5" aria-labelledby="popular"><h2 class="h3 mb-3" id="popular">Маршруты для знакомства</h2><div class="row g-4"><div class="col-12 col-md-6 col-lg-4 route-item" data-name="бадукские озёра карачаево-черкесия" data-difficulty="medium" data-distance="3.5">
+        <article class="card h-100">
+          <img class="card-img-top route-photo" src="images/lake.jpg" width="900" height="600" alt="Иллюстрация природного пейзажа для маршрута «Бадукские озёра»" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
+            <h2 class="card-title h5">Бадукские озёра</h2>
+            <p><span class="badge text-bg-light border">Средняя</span> <span class="small">3,5 км в одну сторону</span></p>
+            <p class="card-text">Тропа проходит через лес к каскаду из трёх горных озёр. Возвращение — по тому же пути; полная прогулка составляет около 7 км.</p>
+            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=baduk">Подробнее<span class="visually-hidden">: Бадукские озёра</span></a>
+          </div>
+        </article>
+      </div>
+<div class="col-12 col-md-6 col-lg-4 route-item" data-name="водопад шумка карачаево-черкесия" data-difficulty="easy" data-distance="0.5">
+        <article class="card h-100">
+          <img class="card-img-top route-photo" src="images/forest.jpg" width="900" height="600" alt="Иллюстрация природного пейзажа для маршрута «Водопад Шумка»" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
+            <h2 class="card-title h5">Водопад Шумка</h2>
+            <p><span class="badge text-bg-light border">Лёгкая</span> <span class="small">0,5 км в одну сторону</span></p>
+            <p class="card-text">Короткая лесная тропа к водопаду. Расстояние указано в одну сторону — обратный путь тоже нужно учитывать.</p>
+            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=shumka">Подробнее<span class="visually-hidden">: Водопад Шумка</span></a>
+          </div>
+        </article>
+      </div>
+<div class="col-12 col-md-6 col-lg-4 route-item" data-name="природа — великий скульптор красноярский край" data-difficulty="medium" data-distance="2.5">
+        <article class="card h-100">
+          <img class="card-img-top route-photo" src="images/mountains.jpg" width="900" height="600" alt="Иллюстрация природного пейзажа для маршрута «Природа — великий скульптор»" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Красноярский край</p>
+            <h2 class="card-title h5">Природа — великий скульптор</h2>
+            <p><span class="badge text-bg-light border">Средняя</span> <span class="small">2,5 км по описанию парка</span></p>
+            <p class="card-text">Маршрут по Центральному скальному району национального парка. Подходит для знакомства с природными скальными формами.</p>
+            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=sculptor">Подробнее<span class="visually-hidden">: Природа — великий скульптор</span></a>
+          </div>
+        </article>
+      </div></div></section>
+    <section class="mb-4" aria-labelledby="faq-title"><h2 class="h3 mb-3" id="faq-title">Частые вопросы</h2><div class="accordion" id="faq">
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-one" aria-expanded="false" aria-controls="faq-one">Нужно ли проверять доступность маршрута?</button></h3><div id="faq-one" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Да. Сезон, погода и ограничения могут измениться. Перед поездкой проверьте официальный сайт парка и правила посещения. Этот каталог не показывает текущий статус открытия троп.</div></div></div>
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-two" aria-expanded="false" aria-controls="faq-two">Как понимать длину и сложность?</button></h3><div id="faq-two" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Рядом с длиной указано, относится ли она к пути в одну сторону. Сложность — условная оценка для учебного каталога, не спортивная категория и не гарантия безопасности.</div></div></div>
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-three" aria-expanded="false" aria-controls="faq-three">Можно ли отправить вопрос через сайт?</button></h3><div id="faq-three" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Форма работает как учебный пример: проверяет поля и показывает результат. Сообщение не отправляется администрации парка или автору сайта.</div></div></div>
+    </div></section>
+    <section class="border rounded p-3"><h2 class="h4">Остался вопрос?</h2><p>Откройте учебную форму обратной связи и выберите маршрут.</p><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Задать вопрос</button></section>
+  </main>
+  <footer class="bg-light border-top py-4" id="contacts">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-6"><p class="fw-bold mb-1">Экотропы России</p><p class="small mb-1">Учебный проект · Чернышев Антон Дмитриевич · ЭФБО-02-25</p><p class="small text-secondary mb-2">Связь с автором: учебная форма обратной связи.</p><button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Обратная связь</button></div>
+        <div class="col-12 col-md-6"><nav aria-label="Навигация в подвале" class="d-flex flex-wrap gap-3"><a href="index.html" class="link-success">Главная</a><a href="catalog.html" class="link-success">Каталог</a><a href="preparation.html" class="link-success">Подготовка</a></nav><p class="small text-secondary mt-3 mb-0">Актуальные условия посещения проверяйте у национального парка. Фотографии пейзажей — иллюстрации, не снимки конкретных маршрутов. Источники указаны в карточке маршрута и README.</p></div>
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title fs-5" id="feedback-title">Вопрос о маршруте</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
+        <div class="modal-body">
+          <p class="alert alert-info small" id="form-note">Учебная форма: данные проверяются только в браузере, не отправляются и не сохраняются. Используйте вымышленные данные.</p>
+          <form id="feedback-form" aria-describedby="form-note">
+            <div class="mb-3"><label class="form-label" for="name">Имя *</label><input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required></div>
+            <div class="mb-3"><label class="form-label" for="email">Электронная почта *</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="mb-3"><label class="form-label" for="phone">Телефон *</label><div class="input-group"><span class="input-group-text" id="phone-prefix">+7</span><input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required></div><div class="form-text" id="phone-hint">10 цифр без +7, например 9001234567.</div></div>
+            <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option></select></div>
+            <div class="mb-3"><label class="form-label" for="comment">Вопрос или комментарий</label><textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea></div>
+            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на учебную обработку введённых данных в браузере без отправки и сохранения *</label></div>
+            <p class="small text-secondary">* Обязательные поля.</p><button class="btn btn-success" type="submit" disabled>Проверить обращение</button>
+          </form>
+          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Обращение прошло учебную проверку. Данные не отправлены и не сохранены.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

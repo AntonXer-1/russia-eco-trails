@@ -1,0 +1,15 @@
+/* Небольшие дополнения к Bootstrap. Сетка и компоненты остаются библиотечными. */
+body { font-family: Arial, sans-serif; color: #26352e; }
+main { min-height: 70vh; }
+html { scroll-padding-top: 5rem; }
+.hero { background-color: #edf5ef; }
+.hero-photo { width: 100%; max-height: 300px; object-fit: cover; }
+.route-photo { height: 180px; object-fit: cover; }
+.card-title { line-height: 1.4; }
+.card:hover { border-color: #198754; }
+.table th { width: 38%; }
+[hidden] { display: none !important; }
+@media (max-width: 575px) {
+  h1 { font-size: 1.9rem; }
+  .navbar-brand { font-size: 1.1rem; }
+}
