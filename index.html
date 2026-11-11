@@ -6,12 +6,12 @@
   <meta name="description" content="Каталог пеших маршрутов и экологических троп России: описание, расстояния и подготовка к прогулке.">
   <title>Главная — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111">
+  <link rel="stylesheet" href="css/custom.css?v=20261111b">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111" defer></script>
+  <script src="js/routes.js?v=20261111b" defer></script>
   <script src="js/main.js?v=20261111" defer></script>
 </head>
-<body>
+<body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
   <header class="sticky-top bg-white border-bottom">
     <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
@@ -93,18 +93,46 @@
       </div>
     </section>
     <section class="mb-4" aria-labelledby="faq-title"><h2 class="h3 mb-3" id="faq-title">Частые вопросы</h2><div class="accordion" id="faq">
-      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-one" aria-expanded="false" aria-controls="faq-one">Нужно ли проверять доступность маршрута?</button></h3><div id="faq-one" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Да. Сезон, погода и ограничения могут измениться. Перед поездкой проверьте официальный сайт парка и правила посещения. Этот каталог не показывает текущий статус открытия троп.</div></div></div>
-      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-two" aria-expanded="false" aria-controls="faq-two">Как понимать длину и сложность?</button></h3><div id="faq-two" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Рядом с длиной указано, относится ли она к пути в одну сторону. Сложность — условная оценка для учебного каталога, не спортивная категория и не гарантия безопасности.</div></div></div>
-      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-three" aria-expanded="false" aria-controls="faq-three">Можно ли отправить вопрос через сайт?</button></h3><div id="faq-three" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Форма работает как учебный пример: проверяет поля и показывает результат. Сообщение не отправляется администрации парка или автору сайта.</div></div></div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-one" aria-expanded="false" aria-controls="faq-one">Нужно ли проверять доступность маршрута?</button></h3>
+        <div id="faq-one" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Перед выездом найдите свежие объявления парка о выбранной тропе. Проверьте, открыта ли она на дату поездки, где находится вход и в какое время можно пройти. После непогоды условия могут измениться.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-permit" aria-expanded="false" aria-controls="faq-permit">Нужен ли пропуск или билет?</button></h3>
+        <div id="faq-permit" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Порядок зависит от парка и маршрута. На сайте парка проверьте, нужно ли оформлять пропуск заранее, как оплатить вход и что предъявить на контрольном пункте. Название парка есть в карточке.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-two" aria-expanded="false" aria-controls="faq-two">Входит ли обратная дорога в указанную длину?</button></h3>
+        <div id="faq-two" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Если написано «в одну сторону», добавьте столько же на возвращение по той же тропе. Например, 3,5 км до Бадукских озёр — около 7 км туда и обратно. Путь от остановки или парковки до начала тропы считайте отдельно.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-difficulty" aria-expanded="false" aria-controls="faq-difficulty">Как выбрать маршрут для первой прогулки?</button></h3>
+        <div id="faq-difficulty" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Начните с короткой тропы и сравните описания: рельеф, подъёмы и состояние покрытия влияют на нагрузку. Метки сложности в каталоге условные. Планируйте время с запасом на остановки и возвращение.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-map" aria-expanded="false" aria-controls="faq-map">Что показывает метка на Яндекс Карте?</button></h3>
+        <div id="faq-map" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Метка показывает точку начала по данным парка. Она помогает найти вход на тропу. Схему всего пути и подъезд к началу заранее уточните у парка.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-offline" aria-expanded="false" aria-controls="faq-offline">Что делать, если на тропе пропадёт связь?</button></h3>
+        <div id="faq-offline" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Заранее сохраните схему и координаты начала, чтобы открыть их без интернета. Зарядите телефон и сообщите близким, куда идёте и когда планируете вернуться.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-packing" aria-expanded="false" aria-controls="faq-packing">Что взять на короткую прогулку?</button></h3>
+        <div id="faq-packing" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Возьмите воду, удобную обувь, заряженный телефон и одежду по прогнозу. На странице <a class="link-success" href="preparation.html">«Подготовка»</a> можно отметить собранные вещи.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-three" aria-expanded="false" aria-controls="faq-three">Куда сообщить об ошибке в карточке?</button></h3>
+        <div id="faq-three" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Напишите автору по контактам в подвале. Укажите название маршрута и уточните, что именно нужно исправить. По вопросам пропусков и доступа обращайтесь в парк.</div></div>
+      </div>
     </div></section>
-    <section class="border rounded p-3"><h2 class="h4">Остался вопрос?</h2><p>Откройте учебную форму обратной связи и выберите маршрут.</p><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Задать вопрос</button></section>
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
       <div class="row g-3">
         <div class="col-12 col-md-4">
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
-          <p class="small mb-2">Учебный каталог пеших маршрутов и советов по подготовке к прогулке.</p>
+          <p class="small mb-2">Выберите тропу и откройте природу пешком.</p>
           <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
         </div>
         <div class="col-12 col-md-4">
@@ -117,28 +145,29 @@
         </div>
         <div class="col-12 col-md-4">
           <h2 class="h6">Контакты автора</h2>
-          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a></address>
-          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Учебная форма</button>
+          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
+          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
         </div>
       </div>
     </div>
   </footer>
+  <a class="back-to-top btn btn-success" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header"><h2 class="modal-title fs-5" id="feedback-title">Вопрос о маршруте</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
         <div class="modal-body">
-          <p class="alert alert-info small" id="form-note">Учебная форма: данные проверяются только в браузере, не отправляются и не сохраняются. Используйте вымышленные данные.</p>
+          <p class="alert alert-info small" id="form-note">Демонстрационная форма проверяет поля в браузере. Данные не отправляются и не сохраняются.</p>
           <form id="feedback-form" aria-describedby="form-note">
             <div class="mb-3"><label class="form-label" for="name">Имя *</label><input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required></div>
             <div class="mb-3"><label class="form-label" for="email">Электронная почта *</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
             <div class="mb-3"><label class="form-label" for="phone">Телефон *</label><div class="input-group"><span class="input-group-text" id="phone-prefix">+7</span><input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required></div><div class="form-text" id="phone-hint">10 цифр без +7, например 9001234567.</div></div>
             <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option></select></div>
             <div class="mb-3"><label class="form-label" for="comment">Вопрос или комментарий</label><textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea></div>
-            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на учебную обработку введённых данных в браузере без отправки и сохранения *</label></div>
+            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на проверку данных в браузере без отправки и сохранения *</label></div>
             <p class="small text-secondary">* Обязательные поля.</p><button class="btn btn-success" type="submit" disabled>Проверить обращение</button>
           </form>
-          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Обращение прошло учебную проверку. Данные не отправлены и не сохранены.</div>
+          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Поля заполнены верно. Данные не отправлены и не сохранены.</div>
         </div>
       </div>
     </div>

@@ -36,7 +36,8 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
     assert.equal(await page.locator('footer a[href="tel:+79582009066"]').count(), 1);
     const outside = await page.locator('a[href]').evaluateAll(links =>
       links.filter(link => /^https?:$/.test(link.protocol) && link.origin !== location.origin).map(link => link.href));
-    assert.deepEqual(outside, [], 'no links to external websites');
+    assert.deepEqual(outside, ['https://t.me/AntonXer'], 'only Telegram is linked externally');
+    assert.equal(await page.locator('footer a[href="https://t.me/AntonXer"]').count(), 1);
     await page.locator('img').evaluateAll(nodes => nodes.forEach(n => n.loading = 'eager'));
     await page.waitForFunction(() => [...document.images].every(n => n.complete && n.naturalWidth > 0));
     const resources = await page.locator('img').evaluateAll(nodes => nodes.map(n => n.complete && n.naturalWidth > 0));
@@ -50,7 +51,8 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth), `overflow at ${width}`);
       await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
       assert.equal(await page.locator('header').evaluate(e=>Math.round(e.getBoundingClientRect().top)),0);
-      await page.evaluate(()=>scrollTo(0,0));
+      await page.getByRole('link', {name: 'Наверх', exact: true}).click();
+      await page.waitForFunction(() => scrollY === 0);
     }
     assert.deepEqual(errors,[]); assert.deepEqual(external,[]);
     if (process.env.SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.SCREENSHOT_DIR,file+'.png'),fullPage:true});
@@ -122,7 +124,9 @@ test('modal preselects route, validates form, reports demo success without sendi
   const p=await browser.newPage(); const sent=[];
   p.on('request',r=>{if(r.method()!=='GET')sent.push(r.url());});
   await p.goto(base+'route.html?id=laleto');
-  await p.getByRole('button',{name:'Задать вопрос о маршруте'}).click();
+  assert.equal(await p.locator('#route-about').textContent(), 'О маршруте');
+  assert.equal(await p.locator('footer #route-question').count(), 1);
+  await p.locator('#route-question').click();
   await p.waitForFunction(()=>document.activeElement?.id==='feedbackModal');
   assert.equal(await p.locator('[name=route]').inputValue(),'laleto');
   await p.locator('[name=name]').fill('Антон');
@@ -140,8 +144,8 @@ test('modal preselects route, validates form, reports demo success without sendi
   await p.keyboard.press('Escape');
   await p.locator('#feedbackModal').waitFor({state:'hidden'});
   await p.waitForFunction(()=>document.activeElement?.id==='route-question');
-  assert.equal(await p.getByRole('button',{name:'Задать вопрос о маршруте'}).evaluate(e=>e===document.activeElement),true);
-  await p.getByRole('button',{name:'Задать вопрос о маршруте'}).click();
+  assert.equal(await p.locator('#route-question').evaluate(e=>e===document.activeElement),true);
+  await p.locator('#route-question').click();
   await p.waitForFunction(()=>document.activeElement?.id==='feedbackModal');
   assert.equal(await p.locator('#form-result').isVisible(),false);
   assert.deepEqual(sent,[]);await p.close();
@@ -152,8 +156,13 @@ test('mobile menu, FAQ and packing checklist respond to input', async () => {
   await p.getByRole('button',{name:'Открыть меню'}).click();
   await p.locator('#site-menu.show').waitFor();
   assert.equal(await p.getByRole('link',{name:'Каталог',exact:true}).first().isVisible(),true);
-  await p.getByRole('button',{name:'Нужно ли проверять доступность маршрута?'}).click();
-  await p.locator('#faq-one.show').waitFor();
+  const questions = p.locator('#faq button');
+  assert.equal(await questions.count(), 8);
+  for (const question of await questions.all()) {
+    await question.click();
+    const answer = await question.getAttribute('aria-controls');
+    await p.locator('#' + answer + '.show').waitFor();
+  }
   await p.goto(base+'preparation.html');
   await p.getByRole('checkbox',{name:'Вода и перекус'}).check();
   assert.equal(await p.getByRole('checkbox',{name:'Вода и перекус'}).isChecked(),true);

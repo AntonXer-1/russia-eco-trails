@@ -6,12 +6,12 @@
   <meta name="description" content="Шесть маршрутов национальных парков с поиском и фильтрами по длине и условной сложности.">
   <title>Каталог маршрутов — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111">
+  <link rel="stylesheet" href="css/custom.css?v=20261111b">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111" defer></script>
+  <script src="js/routes.js?v=20261111b" defer></script>
   <script src="js/main.js?v=20261111" defer></script>
 </head>
-<body>
+<body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
   <header class="sticky-top bg-white border-bottom">
     <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
@@ -27,7 +27,7 @@
   <main class="container py-4" id="main">
     <h1>Каталог маршрутов</h1>
     <p>Выберите маршрут по названию, региону, расстоянию и сложности.</p>
-    <p class="small text-secondary">Сложность условная, для учебного каталога. Длину и возможность посещения уточняйте по официальной карточке. Фотографии — иллюстрации.</p>
+    <p class="small text-secondary">Сложность указана для сравнения маршрутов. Длину и возможность посещения уточняйте по официальной карточке. Фотографии — иллюстрации.</p>
     <noscript><p class="alert alert-warning">Для поиска и фильтров включите JavaScript. Все маршруты доступны ниже, страница описания требует JavaScript.</p></noscript>
     <form id="filters" class="bg-light border rounded p-3 mb-3" role="search" aria-label="Поиск маршрутов">
       <div class="row g-3 align-items-end">
@@ -117,7 +117,7 @@
       <div class="row g-3">
         <div class="col-12 col-md-4">
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
-          <p class="small mb-2">Учебный каталог пеших маршрутов и советов по подготовке к прогулке.</p>
+          <p class="small mb-2">Выберите тропу и откройте природу пешком.</p>
           <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
         </div>
         <div class="col-12 col-md-4">
@@ -130,28 +130,29 @@
         </div>
         <div class="col-12 col-md-4">
           <h2 class="h6">Контакты автора</h2>
-          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a></address>
-          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Учебная форма</button>
+          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
+          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
         </div>
       </div>
     </div>
   </footer>
+  <a class="back-to-top btn btn-success" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header"><h2 class="modal-title fs-5" id="feedback-title">Вопрос о маршруте</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
         <div class="modal-body">
-          <p class="alert alert-info small" id="form-note">Учебная форма: данные проверяются только в браузере, не отправляются и не сохраняются. Используйте вымышленные данные.</p>
+          <p class="alert alert-info small" id="form-note">Демонстрационная форма проверяет поля в браузере. Данные не отправляются и не сохраняются.</p>
           <form id="feedback-form" aria-describedby="form-note">
             <div class="mb-3"><label class="form-label" for="name">Имя *</label><input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required></div>
             <div class="mb-3"><label class="form-label" for="email">Электронная почта *</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
             <div class="mb-3"><label class="form-label" for="phone">Телефон *</label><div class="input-group"><span class="input-group-text" id="phone-prefix">+7</span><input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required></div><div class="form-text" id="phone-hint">10 цифр без +7, например 9001234567.</div></div>
             <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option></select></div>
             <div class="mb-3"><label class="form-label" for="comment">Вопрос или комментарий</label><textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea></div>
-            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на учебную обработку введённых данных в браузере без отправки и сохранения *</label></div>
+            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на проверку данных в браузере без отправки и сохранения *</label></div>
             <p class="small text-secondary">* Обязательные поля.</p><button class="btn btn-success" type="submit" disabled>Проверить обращение</button>
           </form>
-          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Обращение прошло учебную проверку. Данные не отправлены и не сохранены.</div>
+          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Поля заполнены верно. Данные не отправлены и не сохранены.</div>
         </div>
       </div>
     </div>
