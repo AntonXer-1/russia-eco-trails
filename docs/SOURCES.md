@@ -32,15 +32,16 @@
 
 ## Фотографии
 
-Все три фотографии загружены локально с Unsplash по [Unsplash License](https://unsplash.com/license). Они используются как иллюстрации природы, не как документальные фотографии конкретных маршрутов; это указано в интерфейсе. Фотографии не продаются отдельно, авторство себе не приписывается.
+Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). Снимки в описаниях двух маршрутов показывают реальные места. Их уменьшенные копии опубликованы на условиях исходных лицензий.
 
-| Файл | Исходный ресурс |
-| --- | --- |
-| images/forest.jpg | https://images.unsplash.com/photo-1441974231531-c6227db76b6e |
-| images/mountains.jpg | https://images.unsplash.com/photo-1464822759023-fed622ff2c3b |
-| images/lake.jpg | https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1 |
+| Файл | Снимок и источник | Автор и лицензия |
+| --- | --- | --- |
+| `images/forest.jpg` | [Лес, иллюстрация](https://images.unsplash.com/photo-1441974231531-c6227db76b6e) | Unsplash License |
+| `images/mountains.jpg` | [Горы, иллюстрация](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b) | Unsplash License |
+| `images/baduk.jpg` | [Первое Бадукское озеро](https://commons.wikimedia.org/wiki/File:First_Badukskoe_Lake_from_dam.jpg) | Alexander Roumega, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `images/feathers.jpg` | [Скала Перья](https://commons.wikimedia.org/wiki/File:Скала_Перья._Заповедник_Столбы.jpg), точка [скального маршрута](https://kras-stolby.ru/posetitelyam/marshruty/priroda-velikij-skulptor-1/) | Александра Григоренко, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
-При загрузке применены параметры `w=900&q=80&fit=crop&fm=jpg`. После загрузки фотографии не требуют внешнего интернет-ресурса.
+Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 
 ## Библиотека и методички
 

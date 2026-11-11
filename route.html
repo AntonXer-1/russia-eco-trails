@@ -6,10 +6,10 @@
   <meta name="description" content="Описание пешего маршрута: расстояние, регион, особенности и официальный источник.">
   <title>Описание маршрута — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111d">
+  <link rel="stylesheet" href="css/custom.css?v=20261111e">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111c" defer></script>
-  <script src="js/main.js?v=20261111c" defer></script>
+  <script src="js/routes.js?v=20261111e" defer></script>
+  <script src="js/main.js?v=20261111e" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -31,8 +31,11 @@
     <div id="route-error" class="alert alert-warning" hidden>Такой маршрут не найден. <a href="catalog.html">Вернитесь в каталог</a> и выберите маршрут из списка.</div>
     <section id="route-details" hidden>
       <div class="row g-4 mt-1">
-        <div class="col-12 col-lg-6"><figure><img id="route-image" class="img-fluid rounded" width="900" height="600" alt=""><figcaption class="small text-secondary mt-2">Иллюстрация природного пейзажа, не фотография этого маршрута.</figcaption></figure></div>
-        <section class="col-12 col-lg-6" aria-labelledby="route-about">
+        <figure id="route-photo" class="col-12 col-lg-6 mb-0" hidden>
+          <img id="route-image" class="img-fluid rounded" alt="">
+          <figcaption id="route-credit" class="small text-secondary mt-2"></figcaption>
+        </figure>
+        <section class="col-12" aria-labelledby="route-about">
           <h2 id="route-about" class="h4">О маршруте</h2>
           <p id="route-region" class="text-secondary mb-2"></p>
           <p><span id="route-level" class="badge text-bg-success"></span></p>

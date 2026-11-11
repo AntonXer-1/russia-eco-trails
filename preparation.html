@@ -6,10 +6,10 @@
   <meta name="description" content="Список вещей для прогулки по экотропе и советы по подготовке к посещению национального парка.">
   <title>Подготовка к походу — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111d">
+  <link rel="stylesheet" href="css/custom.css?v=20261111e">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111c" defer></script>
-  <script src="js/main.js?v=20261111c" defer></script>
+  <script src="js/routes.js?v=20261111e" defer></script>
+  <script src="js/main.js?v=20261111e" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -24,57 +24,44 @@
       </div>
     </nav>
   </header>
-  <main id="main">
-    <section class="prep-screen container" aria-labelledby="prep-title">
-      <div class="row g-4 align-items-center">
-        <div class="col-12 col-md-6">
-          <h1 id="prep-title">Подготовка к прогулке</h1>
-          <p class="lead mb-4">Выберите тропу по силам и проверьте условия перед выездом.</p>
-          <ul class="list-unstyled mb-4">
-            <li class="border-bottom pb-3 mb-3"><strong class="d-block">Доступ в парк</strong>Проверьте время работы, сезонные ограничения и нужен ли пропуск.</li>
-            <li class="border-bottom pb-3 mb-3"><strong class="d-block">Погода и световой день</strong>Посмотрите прогноз и время заката. Подберите длину тропы с учётом подготовки группы.</li>
+  <main class="container py-4 py-md-5" id="main">
+    <h1>Подготовка к прогулке</h1>
+    <p class="lead mb-4">Что проверить перед выездом, собрать в рюкзак и помнить на тропе.</p>
+
+    <div class="row g-3">
+      <section class="col-12 col-md-6" aria-labelledby="before-trip">
+        <div class="border rounded-3 h-100 p-3 p-md-4">
+          <h2 class="h4" id="before-trip">Перед выездом</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3"><strong class="d-block">Доступ в парк</strong>Проверьте время работы, сезонные ограничения и нужен ли пропуск.</li>
+            <li class="mb-3"><strong class="d-block">Погода и световой день</strong>Посмотрите прогноз и время заката. Оцените, подходит ли дистанция всей группе.</li>
             <li><strong class="d-block">Маршрут и связь</strong>Сохраните схему для просмотра без интернета. Сообщите близким, куда идёте и когда вернётесь.</li>
           </ul>
-          <a href="catalog.html" class="btn btn-success">Открыть каталог</a>
         </div>
-        <div class="col-12 col-md-6">
-          <img src="images/lake.jpg" class="img-fluid rounded-3" width="900" height="600" alt="Иллюстрация: озеро в горах">
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="prep-screen prep-panel border-top border-bottom" aria-labelledby="packing-title">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-12 col-md-6">
-            <h2 id="packing-title">Что взять с собой</h2>
-            <p>Отметьте собранные вещи. Отметки действуют до перезагрузки страницы.</p>
-            <div class="bg-white border rounded-3 p-3 p-md-4">
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-0"><label class="form-check-label" for="packing-0">Вода и перекус</label></div>
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-1"><label class="form-check-label" for="packing-1">Удобная обувь</label></div>
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-2"><label class="form-check-label" for="packing-2">Одежда по погоде и дождевик</label></div>
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-3"><label class="form-check-label" for="packing-3">Заряженный телефон</label></div>
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-4"><label class="form-check-label" for="packing-4">Карта или схема маршрута</label></div>
-              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-5"><label class="form-check-label" for="packing-5">Личная аптечка</label></div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" id="packing-6"><label class="form-check-label" for="packing-6">Пакет для своего мусора</label></div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <img src="images/forest.jpg" class="img-fluid rounded-3" width="900" height="600" loading="lazy" alt="Иллюстрация: лесная тропа">
-          </div>
+      <section class="col-12 col-md-6" aria-labelledby="packing-title">
+        <div class="prep-panel border rounded-3 h-100 p-3 p-md-4">
+          <h2 class="h4" id="packing-title">Что взять с собой</h2>
+          <p>Отметьте собранные вещи. Отметки действуют до перезагрузки страницы.</p>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-0"><label class="form-check-label" for="packing-0">Вода и перекус</label></div>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-1"><label class="form-check-label" for="packing-1">Удобная обувь</label></div>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-2"><label class="form-check-label" for="packing-2">Одежда по погоде и дождевик</label></div>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-3"><label class="form-check-label" for="packing-3">Заряженный телефон</label></div>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-4"><label class="form-check-label" for="packing-4">Карта или схема маршрута</label></div>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-5"><label class="form-check-label" for="packing-5">Личная аптечка</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="packing-6"><label class="form-check-label" for="packing-6">Пакет для своего мусора</label></div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section class="prep-screen container" aria-labelledby="on-trail-title">
-      <h2 id="on-trail-title" class="mb-3">На тропе</h2>
-      <img src="images/mountains.jpg" class="prep-banner rounded-3 mb-4" width="900" height="600" loading="lazy" alt="Иллюстрация: горный хребет">
-      <div class="row g-3 mb-4">
-        <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Держитесь маршрута</h3><p class="mb-0">Следуйте указателям и обходите закрытые участки по разрешённым тропам.</p></article></div>
+    <section class="mt-4" aria-labelledby="on-trail-title">
+      <h2 class="h4" id="on-trail-title">На тропе</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Держитесь маршрута</h3><p class="mb-0">Следуйте указателям. Если участок закрыт, ищите разрешённый обход.</p></article></div>
         <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Берегите природу</h3><p class="mb-0">Забирайте мусор с собой, не кормите животных и не повреждайте растения.</p></article></div>
         <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Следите за временем</h3><p class="mb-0">Учитывайте остановки. Если погода ухудшится, завершите прогулку раньше.</p></article></div>
       </div>
-      <p class="small text-secondary mb-0">В карточках указаны длина и время по данным Тебердинского национального парка и «Красноярских Столбов». Состояние троп и правила посещения уточняйте у парка.</p>
     </section>
   </main>
   <footer class="bg-light border-top py-4" id="contacts">

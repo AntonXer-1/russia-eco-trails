@@ -53,9 +53,16 @@ if (title) {
     Object.entries(values).forEach(([id, value]) => {
       document.getElementById(id).textContent = value;
     });
-    const image = document.querySelector('#route-image');
-    image.src = 'images/' + trail.image + '.jpg';
-    image.alt = 'Иллюстрация природного пейзажа для маршрута «' + trail.name + '»';
+    if (trail.photo) {
+      const image = document.querySelector('#route-image');
+      image.src = 'images/' + trail.photo.file;
+      image.alt = trail.photo.title;
+      image.width = trail.photo.width;
+      image.height = trail.photo.height;
+      document.querySelector('#route-credit').textContent = trail.photo.credit;
+      document.querySelector('#route-photo').hidden = false;
+      document.querySelector('[aria-labelledby="route-about"]').classList.add('col-lg-6');
+    }
     document.querySelector('#route-source').textContent = trail.park;
     const [longitude, latitude] = trail.start;
     document.querySelector('#route-coordinates').textContent = latitude + ', ' + longitude;
