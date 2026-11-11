@@ -32,7 +32,7 @@
 
 ## Фотографии
 
-Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). Снимки в описаниях двух маршрутов показывают реальные места. Их уменьшенные копии опубликованы на условиях исходных лицензий.
+Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). Снимки в карточках и описаниях четырёх маршрутов показывают реальные места. В карточках фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
 
 | Файл | Снимок и источник | Автор и лицензия |
 | --- | --- | --- |
@@ -40,6 +40,8 @@
 | `images/mountains.jpg` | [Горы, иллюстрация](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b) | Unsplash License |
 | `images/baduk.jpg` | [Первое Бадукское озеро](https://commons.wikimedia.org/wiki/File:First_Badukskoe_Lake_from_dam.jpg) | Alexander Roumega, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `images/feathers.jpg` | [Скала Перья](https://commons.wikimedia.org/wiki/File:Скала_Перья._Заповедник_Столбы.jpg), точка [скального маршрута](https://kras-stolby.ru/posetitelyam/marshruty/priroda-velikij-skulptor-1/) | Александра Григоренко, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/shumka.jpg` | [Водопад Шумка](https://commons.wikimedia.org/wiki/File:Водопад_Шумка_(2).jpg) | Legioner2016, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/laleto.jpg` | [Деревянная скульптура у кордона Лалетино](https://commons.wikimedia.org/wiki/File:Деревянная_скульптура._-_panoramio.jpg), рядом с началом [Лалетинского маршрута](https://kras-stolby.ru/posetitelyam/marshruty/laletinskaya-doroga-1/) | Станислав Соломахин, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
 
 Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 

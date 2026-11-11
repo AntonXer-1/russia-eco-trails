@@ -47,6 +47,7 @@ html { scroll-padding-top: 5rem; }
   transform: rotate(45deg);
 }
 .hero-photo { width: 100%; max-height: 300px; object-fit: cover; }
+.catalog-photo { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 #route-image { width: auto; max-height: 360px; }
 .card-title { line-height: 1.4; }
 .card:hover { border-color: #198754; }
