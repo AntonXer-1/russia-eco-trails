@@ -6,10 +6,10 @@
   <meta name="description" content="Описание пешего маршрута: расстояние, регион, особенности и официальный источник.">
   <title>Описание маршрута — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111g">
+  <link rel="stylesheet" href="css/custom.css?v=20261111h">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111g" defer></script>
-  <script src="js/main.js?v=20261111g" defer></script>
+  <script src="js/routes.js?v=20261111h" defer></script>
+  <script src="js/main.js?v=20261111h" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -36,10 +36,16 @@
     <div id="route-error" class="alert alert-warning" hidden>Такой маршрут не найден. <a href="catalog.html">Вернитесь в каталог</a> и выберите маршрут из списка.</div>
     <section id="route-details" hidden>
       <div class="row g-4 mt-1">
-        <figure id="route-photo" class="col-12 col-lg-6 mb-0" hidden>
-          <img id="route-image" class="img-fluid rounded" alt="">
-          <figcaption id="route-credit" class="small text-secondary mt-2"></figcaption>
-        </figure>
+        <div id="route-photo" class="col-12 col-lg-6" hidden>
+          <div class="route-gallery">
+            <template>
+              <figure class="mb-0">
+                <img class="img-fluid rounded" alt="">
+                <figcaption class="small text-secondary mt-2"></figcaption>
+              </figure>
+            </template>
+          </div>
+        </div>
         <section class="col-12" aria-labelledby="route-about">
           <h2 id="route-about" class="h4">О маршруте</h2>
           <p id="route-region" class="text-secondary mb-2"></p>
@@ -83,7 +89,7 @@
           <h2 class="h6">Контакты</h2>
           <address class="small mb-3">
             <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
-            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–10:00 (МСК)</span>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–20:00 (МСК)</span>
             <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
             <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
           </address>

@@ -43,6 +43,7 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html',
     assert.deepEqual(outside, [], 'site navigation stays on the site');
     assert.equal(await page.locator('footer span.contact-item').filter({hasText: 'Telegram @AntonXer'}).count(), 1);
     assert.equal(await page.locator('footer .contact-icon').count(), 4);
+    assert.equal(await page.locator('footer').getByText('Часы связи: 09:00–20:00 (МСК)').count(), 1);
     await page.waitForFunction(() => [...document.querySelectorAll('footer .contact-icon use')]
       .every(icon => icon.getBBox().width > 0));
     assert.equal(await page.locator('footer').getByText('Экотропы России. Все права защищены.').count(), 1);
@@ -125,6 +126,11 @@ test('maps open automatically and mark the start of each route', async () => {
     assert.equal(url.searchParams.get('ll'), start);
     assert.equal(url.searchParams.get('pt'), start + ',pm2rdm');
     assert.equal(await map.isVisible(), true);
+    const gallery = page.locator('.route-gallery');
+    const photoCount = id === 'baduk' ? 1 : 2;
+    assert.equal(await gallery.locator('img').count(), photoCount);
+    assert.equal(await gallery.locator('figcaption').count(), photoCount);
+    await gallery.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   }
   await page.close();

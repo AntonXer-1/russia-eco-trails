@@ -54,12 +54,20 @@ if (title) {
       document.getElementById(id).textContent = value;
     });
     if (trail.photo) {
-      const image = document.querySelector('#route-image');
-      image.src = 'images/' + trail.photo.file;
-      image.alt = trail.photo.title;
-      image.width = trail.photo.width;
-      image.height = trail.photo.height;
-      document.querySelector('#route-credit').textContent = trail.photo.credit;
+      const gallery = document.querySelector('.route-gallery');
+      const template = gallery.querySelector('template');
+      const photos = [trail.photo, trail.secondPhoto].filter(Boolean);
+      photos.forEach(photo => {
+        const figure = template.content.firstElementChild.cloneNode(true);
+        const image = figure.querySelector('img');
+        image.src = 'images/' + photo.file;
+        image.alt = photo.title;
+        image.width = photo.width;
+        image.height = photo.height;
+        figure.querySelector('figcaption').textContent = photo.credit;
+        gallery.append(figure);
+      });
+      gallery.classList.toggle('route-gallery--pair', photos.length === 2);
       document.querySelector('#route-photo').hidden = false;
       document.querySelector('[aria-labelledby="route-about"]').classList.add('col-lg-6');
     }

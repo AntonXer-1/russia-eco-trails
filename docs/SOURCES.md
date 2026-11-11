@@ -32,7 +32,7 @@
 
 ## Фотографии
 
-Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). В карточках четырёх маршрутов показаны реальные места. Для «Книги природы» и «Белой тропы» использованы снимки наблюдений природы рядом с тропами. В карточках фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
+Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). В карточках четырёх маршрутов показаны реальные места. Для «Книги природы» и «Белой тропы» использованы снимки наблюдений природы рядом с тропами. В карточках и парных галереях фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
 
 | Файл | Снимок и источник | Автор и лицензия |
 | --- | --- | --- |
@@ -45,6 +45,11 @@
 | `images/gear.jpg` | [Рюкзак, треккинговые палки и обувь](https://commons.wikimedia.org/wiki/File:A_backpack_with_trekking_poles_and_shoes.jpg) | SGrabarczuk (WMF), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `images/book.jpg` | [Синюха голубая, наблюдение iNaturalist №175859170](https://www.inaturalist.org/observations/175859170), в долине Лалетины между началом и концом экотропы; координаты 55.9488717, 92.7449717 | Илья Руденко, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/305667667) |
 | `images/white.jpg` | [Бабочка, наблюдение iNaturalist №393199105](https://www.inaturalist.org/observations/393199105), рядом с началом «Белой тропы»; координаты 55.9170942, 92.7232307 | Pribylova Maria, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `images/shumka-spring.jpg` | [Тебердинский заповедник весной](https://commons.wikimedia.org/wiki/File:Тебердинский_заповедник._Весна.jpg), 43.405606, 41.731837, в районе Шумки | MarOleg, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/first-pillar.jpg` | [Первый Столб](https://commons.wikimedia.org/wiki/File:Красноярские_Столбы_Первый.jpg), точка скального маршрута | Yeskof, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/laleto-raspberry.jpg` | [Малина, наблюдение №272881114](https://www.inaturalist.org/observations/272881114), рядом с кордоном | Oleg Kosterin, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/490878513) |
+| `images/book-fern.jpg` | [Папоротник, наблюдение №175859336](https://www.inaturalist.org/observations/175859336), в долине Лалетины | Илья Руденко, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/305667948) |
+| `images/white-stellaria.jpg` | [Звездчатка, наблюдение №375128190](https://www.inaturalist.org/observations/375128190), в окрестностях «Белой тропы» | Tatyana Petrenko, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/685737142) |
 
 Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 

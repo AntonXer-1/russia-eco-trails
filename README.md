@@ -32,7 +32,7 @@ Bootstrap подключён **локально**, что в тетради №1
 
 ```html
 <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css?v=20261111g">
+<link rel="stylesheet" href="css/custom.css?v=20261111h">
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 ```
 
