@@ -6,10 +6,10 @@
   <meta name="description" content="Каталог пеших маршрутов и экологических троп России: описание, расстояния и подготовка к прогулке.">
   <title>Главная — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261110">
+  <link rel="stylesheet" href="css/custom.css?v=20261111">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/routes.js?v=20261111" defer></script>
+  <script src="js/main.js?v=20261111" defer></script>
 </head>
 <body>
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -27,12 +27,12 @@
   <main class="container py-4" id="main">
     <section class="hero p-3 p-md-4 rounded mb-5">
       <div class="row g-4 align-items-center">
-        <div class="col-12 col-lg-6"><p class="text-success fw-bold">Прогулки на природе</p><h1>Пешие маршруты и экотропы России</h1><p class="lead">Познакомьтесь с маршрутами, сравните расстояния и подготовьтесь к прогулке.</p><a class="btn btn-success" href="catalog.html">Выбрать маршрут</a></div>
+        <div class="col-12 col-lg-6"><p class="hero-kicker fw-bold">Прогулки на природе</p><h1>Пешие маршруты и экотропы России</h1><p class="lead">Познакомьтесь с маршрутами, сравните расстояния и подготовьтесь к прогулке.</p><a class="btn btn-success" href="catalog.html">Выбрать маршрут</a></div>
         <div class="col-12 col-lg-6"><img src="images/forest.jpg" class="img-fluid rounded hero-photo" width="900" height="599" alt="Солнечные лучи в зелёном лесу — иллюстрация прогулки на природе"></div>
       </div>
     </section>
     <section class="mb-5" aria-labelledby="advantages"><h2 class="h3 mb-3" id="advantages">Что поможет с выбором</h2><div class="row g-3">
-      <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Понятные описания</h3><p class="mb-0">Краткая информация о тропе и ссылка на официальный источник.</p></div></div>
+      <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Понятные описания</h3><p class="mb-0">Краткая информация о тропе и название парка, опубликовавшего сведения.</p></div></div>
       <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Поиск по маршрутам</h3><p class="mb-0">Выбирайте по названию, региону, длине и условной сложности.</p></div></div>
       <div class="col-12 col-md-4"><div class="h-100 border rounded p-3"><h3 class="h5">Подготовка к прогулке</h3><p class="mb-0">Список вещей и основные советы собраны на отдельной странице.</p></div></div>
     </div></section>
@@ -72,6 +72,26 @@
           </div>
         </article>
       </div></div></section>
+    <section class="hero rounded p-3 p-md-4 mb-5" aria-labelledby="about-title">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-6">
+          <h2 class="h3" id="about-title">О проекте</h2>
+          <p>Каталог помогает сравнить прогулки по национальным паркам, если вы только знакомитесь с экотропами или выбираете маршрут на выходные. В карточках собраны расстояния, особенности и названия парков.</p>
+          <p>Короткая тропа и длинный горный маршрут требуют разной подготовки. Сравните расстояния, проверьте, указан ли путь в одну сторону, и загляните в список вещей перед поездкой.</p>
+          <p>Данные справочные: условия посещения и открытие троп проверяйте у парка. Фотографии показывают типы пейзажей и не являются снимками конкретных маршрутов.</p>
+          <a href="preparation.html" class="btn btn-outline-success">О проекте и подготовке</a>
+        </div>
+        <div class="col-12 col-lg-6"><img src="images/mountains.jpg" class="img-fluid rounded" width="900" height="600" alt="Горный пейзаж — иллюстрация к каталогу"></div>
+      </div>
+    </section>
+    <section class="mb-5" aria-labelledby="steps-title">
+      <h2 class="h3 mb-3" id="steps-title">Как выбрать маршрут</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4"><article class="border rounded p-3 h-100"><h3 class="h5">1. Задайте условия</h3><p class="mb-0">Введите название или регион. Если хотите короткую прогулку, выберите длину до 2 км.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded p-3 h-100"><h3 class="h5">2. Откройте описание</h3><p class="mb-0">Посмотрите характеристики и узнайте, какой парк публикует актуальные условия.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded p-3 h-100"><h3 class="h5">3. Соберите вещи</h3><p class="mb-0">Проверьте погоду, сохраните схему и отметьте нужное в списке подготовки.</p></article></div>
+      </div>
+    </section>
     <section class="mb-4" aria-labelledby="faq-title"><h2 class="h3 mb-3" id="faq-title">Частые вопросы</h2><div class="accordion" id="faq">
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-one" aria-expanded="false" aria-controls="faq-one">Нужно ли проверять доступность маршрута?</button></h3><div id="faq-one" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Да. Сезон, погода и ограничения могут измениться. Перед поездкой проверьте официальный сайт парка и правила посещения. Этот каталог не показывает текущий статус открытия троп.</div></div></div>
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-two" aria-expanded="false" aria-controls="faq-two">Как понимать длину и сложность?</button></h3><div id="faq-two" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Рядом с длиной указано, относится ли она к пути в одну сторону. Сложность — условная оценка для учебного каталога, не спортивная категория и не гарантия безопасности.</div></div></div>
@@ -82,8 +102,24 @@
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
       <div class="row g-3">
-        <div class="col-12 col-md-6"><p class="fw-bold mb-1">Экотропы России</p><p class="small mb-1">Учебный проект · Чернышев Антон Дмитриевич · ЭФБО-02-25</p><p class="small text-secondary mb-2">Связь с автором: учебная форма обратной связи.</p><button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Обратная связь</button></div>
-        <div class="col-12 col-md-6"><nav aria-label="Навигация в подвале" class="d-flex flex-wrap gap-3"><a href="index.html" class="link-success">Главная</a><a href="catalog.html" class="link-success">Каталог</a><a href="preparation.html" class="link-success">Подготовка</a></nav><p class="small text-secondary mt-3 mb-0">Актуальные условия посещения проверяйте у национального парка. Фотографии пейзажей — иллюстрации, не снимки конкретных маршрутов. Источники указаны в карточке маршрута и README.</p></div>
+        <div class="col-12 col-md-4">
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small mb-2">Учебный каталог пеших маршрутов и советов по подготовке к прогулке.</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">О проекте и подготовка</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Контакты автора</h2>
+          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a></address>
+          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Учебная форма</button>
+        </div>
       </div>
     </div>
   </footer>

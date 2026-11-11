@@ -6,10 +6,10 @@
   <meta name="description" content="Шесть маршрутов национальных парков с поиском и фильтрами по длине и условной сложности.">
   <title>Каталог маршрутов — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261110">
+  <link rel="stylesheet" href="css/custom.css?v=20261111">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/routes.js?v=20261111" defer></script>
+  <script src="js/main.js?v=20261111" defer></script>
 </head>
 <body>
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -115,8 +115,24 @@
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
       <div class="row g-3">
-        <div class="col-12 col-md-6"><p class="fw-bold mb-1">Экотропы России</p><p class="small mb-1">Учебный проект · Чернышев Антон Дмитриевич · ЭФБО-02-25</p><p class="small text-secondary mb-2">Связь с автором: учебная форма обратной связи.</p><button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Обратная связь</button></div>
-        <div class="col-12 col-md-6"><nav aria-label="Навигация в подвале" class="d-flex flex-wrap gap-3"><a href="index.html" class="link-success">Главная</a><a href="catalog.html" class="link-success">Каталог</a><a href="preparation.html" class="link-success">Подготовка</a></nav><p class="small text-secondary mt-3 mb-0">Актуальные условия посещения проверяйте у национального парка. Фотографии пейзажей — иллюстрации, не снимки конкретных маршрутов. Источники указаны в карточке маршрута и README.</p></div>
+        <div class="col-12 col-md-4">
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small mb-2">Учебный каталог пеших маршрутов и советов по подготовке к прогулке.</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">О проекте и подготовка</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Контакты автора</h2>
+          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a></address>
+          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Учебная форма</button>
+        </div>
       </div>
     </div>
   </footer>

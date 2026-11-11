@@ -6,10 +6,10 @@
   <meta name="description" content="Описание пешего маршрута: расстояние, регион, особенности и официальный источник.">
   <title>Описание маршрута — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261110">
+  <link rel="stylesheet" href="css/custom.css?v=20261111">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/routes.js?v=20261111" defer></script>
+  <script src="js/main.js?v=20261111" defer></script>
 </head>
 <body>
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -27,7 +27,7 @@
   <main class="container py-4" id="main">
     <nav aria-label="Хлебные крошки"><ol class="breadcrumb"><li class="breadcrumb-item"><a class="link-success" href="index.html">Главная</a></li><li class="breadcrumb-item"><a class="link-success" href="catalog.html">Каталог</a></li><li class="breadcrumb-item active" aria-current="page">Маршрут</li></ol></nav>
     <h1 id="route-title">Описание маршрута</h1>
-    <noscript><p class="alert alert-warning">Включите JavaScript для просмотра выбранного маршрута. Официальные сведения также доступны на сайтах <a href="https://tgpbz.ru/karta-marshrutov/">Тебердинского национального парка</a> и <a href="https://kras-stolby.ru/posetitelyam/marshruty/">«Красноярских Столбов»</a>.</p></noscript>
+    <noscript><p class="alert alert-warning">Включите JavaScript для просмотра выбранного маршрута. Источники данных — Тебердинский национальный парк и «Красноярские Столбы».</p></noscript>
     <div id="route-error" class="alert alert-warning" hidden>Такой маршрут не найден. <a href="catalog.html">Вернитесь в каталог</a> и выберите маршрут из списка.</div>
     <section id="route-details" hidden>
       <div class="row g-4 mt-1">
@@ -37,15 +37,38 @@
       <section class="mt-4"><h2 class="h4">О маршруте</h2><p id="route-text"></p></section>
       <div class="table-responsive"><table class="table table-bordered"><caption>Основные сведения о выбранном маршруте</caption><tbody><tr><th scope="row">Регион</th><td id="table-region"></td></tr><tr><th scope="row">Территория</th><td id="table-park"></td></tr><tr><th scope="row">Длина</th><td id="table-length"></td></tr><tr><th scope="row">Время</th><td id="table-time"></td></tr><tr><th scope="row">Способ передвижения</th><td>Пешком</td></tr><tr><th scope="row">Условная сложность</th><td id="table-level"></td></tr></tbody></table></div>
       <p class="small text-secondary">Оценка сложности редакционная и не является официальной категорией. Описание не заменяет схему и правила парка.</p>
-      <p><a id="route-source" class="link-success" href="catalog.html">Официальное описание и условия посещения</a></p>
+      <p>Источник сведений: <span id="route-source"></span>. Адреса источников перечислены в документации проекта.</p>
+      <section class="my-4 p-3 p-md-4 border rounded-3">
+        <h2 class="h4">Начало маршрута на карте</h2>
+        <p class="mb-2">Координаты по данным парка: <span id="route-coordinates"></span> (широта, долгота).</p>
+        <p class="small text-secondary">Метка показывает начало тропы. Схему всего пути уточняйте у парка.</p>
+        <button type="button" class="btn btn-outline-success" id="show-map" aria-controls="route-map" aria-expanded="false">Показать Яндекс Карту</button>
+        <iframe id="route-map" class="route-map mt-3 rounded" title="Яндекс Карта — начало маршрута" hidden></iframe>
+      </section>
       <div class="alert alert-info">Перед поездкой уточните погоду, сезонные ограничения и доступность тропы у национального парка. Каталог не показывает текущий статус открытия маршрутов.</div>
     </section>
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
       <div class="row g-3">
-        <div class="col-12 col-md-6"><p class="fw-bold mb-1">Экотропы России</p><p class="small mb-1">Учебный проект · Чернышев Антон Дмитриевич · ЭФБО-02-25</p><p class="small text-secondary mb-2">Связь с автором: учебная форма обратной связи.</p><button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Обратная связь</button></div>
-        <div class="col-12 col-md-6"><nav aria-label="Навигация в подвале" class="d-flex flex-wrap gap-3"><a href="index.html" class="link-success">Главная</a><a href="catalog.html" class="link-success">Каталог</a><a href="preparation.html" class="link-success">Подготовка</a></nav><p class="small text-secondary mt-3 mb-0">Актуальные условия посещения проверяйте у национального парка. Фотографии пейзажей — иллюстрации, не снимки конкретных маршрутов. Источники указаны в карточке маршрута и README.</p></div>
+        <div class="col-12 col-md-4">
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small mb-2">Учебный каталог пеших маршрутов и советов по подготовке к прогулке.</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">О проекте и подготовка</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6">Контакты автора</h2>
+          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a></address>
+          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Учебная форма</button>
+        </div>
       </div>
     </div>
   </footer>

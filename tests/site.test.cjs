@@ -12,7 +12,7 @@ before(async () => {
       const url = new URL(req.url, 'http://localhost');
       const file = path.resolve(root, '.' + (url.pathname === '/' ? '/index.html' : decodeURIComponent(url.pathname)));
       if (!file.startsWith(root + path.sep)) {res.writeHead(403).end(); return;}
-      const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.jpg':'image/jpeg'};
+      const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.jpg':'image/jpeg','.svg':'image/svg+xml'};
       res.setHeader('Content-Type', mime[path.extname(file)] || 'text/plain');
       res.end(await fs.readFile(file));
     } catch {res.writeHead(404).end('Not found');}
@@ -31,6 +31,12 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
     await page.goto(base + file);
     assert.equal(await page.locator('main').count(), 1);
     assert.equal(await page.locator('h1').count(), 1);
+    assert.equal(await page.locator('footer .footer-brand img').count(), 1);
+    assert.equal(await page.locator('footer a[href="mailto:antonmister6@gmail.com"]').count(), 1);
+    assert.equal(await page.locator('footer a[href="tel:+79582009066"]').count(), 1);
+    const outside = await page.locator('a[href]').evaluateAll(links =>
+      links.filter(link => /^https?:$/.test(link.protocol) && link.origin !== location.origin).map(link => link.href));
+    assert.deepEqual(outside, [], 'no links to external websites');
     await page.locator('img').evaluateAll(nodes => nodes.forEach(n => n.loading = 'eager'));
     await page.waitForFunction(() => [...document.images].every(n => n.complete && n.naturalWidth > 0));
     const resources = await page.locator('img').evaluateAll(nodes => nodes.map(n => n.complete && n.naturalWidth > 0));
@@ -79,6 +85,37 @@ test('each catalog link opens its own route and unknown id is handled', async ()
   assert.equal(await p.locator('#route-error').isVisible(),true);
   assert.equal(await p.locator('#route-details').isVisible(),false);
   await p.close();
+});
+
+test('maps load on demand and mark the start of each route', async () => {
+  const page = await browser.newPage({viewport: {width: 375, height: 800}});
+  const starts = {
+    baduk: '41.693075,43.375845',
+    shumka: '41.730317,43.409851',
+    sculptor: '92.73015,55.917567',
+    laleto: '92.745867,55.951967',
+    book: '92.7416,55.942233',
+    white: '92.723167,55.916917'
+  };
+  await page.route('https://yandex.ru/map-widget/v1/**', route => route.fulfill({body: 'Map'}));
+  for (const [id, start] of Object.entries(starts)) {
+    await page.goto(base + 'route.html?id=' + id);
+    const map = page.locator('#route-map');
+    const button = page.locator('#show-map');
+    assert.equal(await map.getAttribute('src'), null);
+    assert.equal(await map.isVisible(), false);
+    await button.click();
+    const url = new URL(await map.getAttribute('src'));
+    assert.equal(url.origin + url.pathname, 'https://yandex.ru/map-widget/v1/');
+    assert.equal(url.searchParams.get('ll'), start);
+    assert.equal(url.searchParams.get('pt'), start + ',pm2rdm');
+    assert.equal(await map.isVisible(), true);
+    assert.equal(await button.getAttribute('aria-expanded'), 'true');
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    await button.click();
+    assert.equal(await map.isVisible(), false);
+  }
+  await page.close();
 });
 
 test('modal preselects route, validates form, reports demo success without sending', async () => {

@@ -56,7 +56,22 @@ if (title) {
     const image = document.querySelector('#route-image');
     image.src = 'images/' + trail.image + '.jpg';
     image.alt = 'Иллюстрация природного пейзажа для маршрута «' + trail.name + '»';
-    document.querySelector('#route-source').href = trail.source;
+    document.querySelector('#route-source').textContent = trail.park;
+    const [longitude, latitude] = trail.start;
+    document.querySelector('#route-coordinates').textContent = latitude + ', ' + longitude;
+    const mapButton = document.querySelector('#show-map');
+    const mapFrame = document.querySelector('#route-map');
+    mapButton.addEventListener('click', () => {
+      const show = mapFrame.hidden;
+      if (show && !mapFrame.hasAttribute('src')) {
+        const point = longitude + ',' + latitude;
+        const params = new URLSearchParams({ll: point, pt: point + ',pm2rdm', z: '15', lang: 'ru_RU'});
+        mapFrame.src = 'https://yandex.ru/map-widget/v1/?' + params;
+      }
+      mapFrame.hidden = !show;
+      mapButton.setAttribute('aria-expanded', String(show));
+      mapButton.textContent = show ? 'Скрыть карту' : 'Показать Яндекс Карту';
+    });
     document.querySelector('#route-question').dataset.route = trail.id;
     document.querySelector('#route-details').hidden = false;
   }
