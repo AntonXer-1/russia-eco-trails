@@ -32,13 +32,13 @@ const title = document.querySelector('#route-title');
 if (title) {
   const id = new URLSearchParams(location.search).get('id') || 'baduk';
   const trail = trails.find(item => item.id === id);
+  const routeName = trail?.name ?? 'Маршрут не найден';
+  title.textContent = routeName;
+  document.querySelector('.breadcrumb [aria-current="page"]').textContent = routeName;
+  document.title = routeName + ' — Экотропы России';
   if (!trail) {
-    title.textContent = 'Маршрут не найден';
     document.querySelector('#route-error').hidden = false;
-    document.title = 'Маршрут не найден — Экотропы России';
   } else {
-    title.textContent = trail.name;
-    document.title = trail.name + ' — Экотропы России';
     const values = {
       'route-region': trail.region,
       'route-level': trail.level,

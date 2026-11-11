@@ -25,8 +25,15 @@ after(async () => {await browser?.close(); await new Promise(resolve => server?.
 
 const mapWidget = 'https://yandex.ru/map-widget/v1/';
 const mockMap = page => page.route(mapWidget + '**', route => route.fulfill({body: 'Map'}));
+const breadcrumbs = {
+  'index.html': [],
+  'catalog.html': ['Главная', 'Каталог'],
+  'route.html': ['Главная', 'Каталог', 'Бадукские озёра'],
+  'preparation.html': ['Главная', 'Подготовка'],
+  'about.html': ['Главная', 'О проекте']
+};
 
-for (const file of ['index.html','catalog.html','route.html','preparation.html','about.html']) {
+for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
   test(`${file}: resources, links, responsive layout and sticky header`, async () => {
     const page = await browser.newPage(); const errors = [], external = [];
     await mockMap(page);
@@ -35,6 +42,13 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html',
     await page.goto(base + file);
     assert.equal(await page.locator('main').count(), 1);
     assert.equal(await page.locator('h1').count(), 1);
+    const crumbs = page.locator('main .breadcrumb');
+    assert.deepEqual(await crumbs.locator('li').allTextContents(), expectedCrumbs);
+    if (expectedCrumbs.length) {
+      assert.equal(await crumbs.locator('a').first().getAttribute('href'), 'index.html');
+      assert.equal(await crumbs.locator('li').last().getAttribute('aria-current'), 'page');
+      assert.equal(await crumbs.locator('li').last().locator('a').count(), 0);
+    }
     assert.equal(await page.locator('footer .footer-brand img').count(), 1);
     assert.equal(await page.locator('footer a[href="mailto:antonmister6@gmail.com"]').count(), 1);
     assert.equal(await page.locator('footer a[href="tel:+79582009066"]').count(), 1);
@@ -99,7 +113,13 @@ test('search, combined filters, no results and reset', async () => {
 test('each catalog link opens its own route and unknown id is handled', async () => {
   const p=await browser.newPage(); await mockMap(p); await p.goto(base+'catalog.html');
   const links=await p.locator('.route-item a').evaluateAll(ns=>ns.map(n=>({href:n.getAttribute('href'),title:n.closest('article').querySelector('h2').textContent})));
-  for(const link of links){await p.goto(base+link.href);assert.equal(await p.locator('h1').textContent(),link.title);}
+  for (const link of links) {
+    await p.goto(base + link.href);
+    assert.equal(await p.locator('h1').textContent(), link.title);
+    assert.equal(await p.locator('.breadcrumb [aria-current="page"]').textContent(), link.title);
+  }
+  await p.locator('.breadcrumb').getByRole('link', {name: 'Каталог'}).click();
+  assert.equal(p.url(), base + 'catalog.html');
   await p.goto(base+'route.html?id=unknown');
   assert.equal(await p.locator('#route-error').isVisible(),true);
   assert.equal(await p.locator('#route-details').isVisible(),false);
