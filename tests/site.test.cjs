@@ -60,7 +60,7 @@ for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
     assert.equal(await page.locator('footer').getByText('Часы связи: 09:00–20:00 (МСК)').count(), 1);
     await page.waitForFunction(() => [...document.querySelectorAll('footer .contact-icon use')]
       .every(icon => icon.getBBox().width > 0));
-    assert.equal(await page.locator('footer').getByText('Экотропы России. Все права защищены.').count(), 1);
+    assert.equal(await page.locator('footer').getByText('© 2026 Экотропы России | Все права защищены', {exact: true}).count(), 1);
     assert.deepEqual(await page.locator('header .nav-link').evaluateAll(links => links.map(link => link.getAttribute('href'))),
       ['index.html', 'catalog.html', 'preparation.html', 'about.html']);
     await page.locator('img').evaluateAll(nodes => nodes.forEach(n => n.loading = 'eager'));
