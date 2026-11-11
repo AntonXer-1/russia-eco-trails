@@ -23,9 +23,13 @@ before(async () => {
 });
 after(async () => {await browser?.close(); await new Promise(resolve => server?.close(resolve));});
 
+const mapWidget = 'https://yandex.ru/map-widget/v1/';
+const mockMap = page => page.route(mapWidget + '**', route => route.fulfill({body: 'Map'}));
+
 for (const file of ['index.html','catalog.html','route.html','preparation.html']) {
   test(`${file}: resources, links, responsive layout and sticky header`, async () => {
     const page = await browser.newPage(); const errors = [], external = [];
+    await mockMap(page);
     page.on('pageerror', e => errors.push(e.message));
     page.on('request', req => {if (!req.url().startsWith(base)) external.push(req.url());});
     await page.goto(base + file);
@@ -54,7 +58,9 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
       await page.getByRole('link', {name: 'Наверх', exact: true}).click();
       await page.waitForFunction(() => scrollY === 0);
     }
-    assert.deepEqual(errors,[]); assert.deepEqual(external,[]);
+    assert.deepEqual(errors, []);
+    assert.equal(external.length, file === 'route.html' ? 1 : 0);
+    assert.ok(external.every(url => url.startsWith(mapWidget)));
     if (process.env.SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.SCREENSHOT_DIR,file+'.png'),fullPage:true});
     await page.close();
   });
@@ -80,7 +86,7 @@ test('search, combined filters, no results and reset', async () => {
 });
 
 test('each catalog link opens its own route and unknown id is handled', async () => {
-  const p=await browser.newPage(); await p.goto(base+'catalog.html');
+  const p=await browser.newPage(); await mockMap(p); await p.goto(base+'catalog.html');
   const links=await p.locator('.route-item a').evaluateAll(ns=>ns.map(n=>({href:n.getAttribute('href'),title:n.closest('article').querySelector('h2').textContent})));
   for(const link of links){await p.goto(base+link.href);assert.equal(await p.locator('h1').textContent(),link.title);}
   await p.goto(base+'route.html?id=unknown');
@@ -89,7 +95,7 @@ test('each catalog link opens its own route and unknown id is handled', async ()
   await p.close();
 });
 
-test('maps load on demand and mark the start of each route', async () => {
+test('maps open automatically and mark the start of each route', async () => {
   const page = await browser.newPage({viewport: {width: 375, height: 800}});
   const starts = {
     baduk: '41.693075,43.375845',
@@ -99,29 +105,24 @@ test('maps load on demand and mark the start of each route', async () => {
     book: '92.7416,55.942233',
     white: '92.723167,55.916917'
   };
-  await page.route('https://yandex.ru/map-widget/v1/**', route => route.fulfill({body: 'Map'}));
+  await mockMap(page);
   for (const [id, start] of Object.entries(starts)) {
     await page.goto(base + 'route.html?id=' + id);
     const map = page.locator('#route-map');
-    const button = page.locator('#show-map');
-    assert.equal(await map.getAttribute('src'), null);
-    assert.equal(await map.isVisible(), false);
-    await button.click();
+    assert.equal(await page.locator('#show-map').count(), 0);
     const url = new URL(await map.getAttribute('src'));
-    assert.equal(url.origin + url.pathname, 'https://yandex.ru/map-widget/v1/');
+    assert.equal(url.origin + url.pathname, mapWidget);
     assert.equal(url.searchParams.get('ll'), start);
     assert.equal(url.searchParams.get('pt'), start + ',pm2rdm');
     assert.equal(await map.isVisible(), true);
-    assert.equal(await button.getAttribute('aria-expanded'), 'true');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-    await button.click();
-    assert.equal(await map.isVisible(), false);
   }
   await page.close();
 });
 
 test('modal preselects route, validates form, reports demo success without sending', async () => {
   const p=await browser.newPage(); const sent=[];
+  await mockMap(p);
   p.on('request',r=>{if(r.method()!=='GET')sent.push(r.url());});
   await p.goto(base+'route.html?id=laleto');
   assert.equal(await p.locator('#route-about').textContent(), 'О маршруте');

@@ -6,10 +6,10 @@
   <meta name="description" content="Шесть маршрутов национальных парков с поиском и фильтрами по длине и условной сложности.">
   <title>Каталог маршрутов — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111b">
+  <link rel="stylesheet" href="css/custom.css?v=20261111c">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111b" defer></script>
-  <script src="js/main.js?v=20261111" defer></script>
+  <script src="js/routes.js?v=20261111c" defer></script>
+  <script src="js/main.js?v=20261111c" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -27,7 +27,7 @@
   <main class="container py-4" id="main">
     <h1>Каталог маршрутов</h1>
     <p>Выберите маршрут по названию, региону, расстоянию и сложности.</p>
-    <p class="small text-secondary">Сложность указана для сравнения маршрутов. Длину и возможность посещения уточняйте по официальной карточке. Фотографии — иллюстрации.</p>
+    <p class="small text-secondary">Длину и возможность посещения уточняйте по официальной карточке. Фотографии — иллюстрации.</p>
     <noscript><p class="alert alert-warning">Для поиска и фильтров включите JavaScript. Все маршруты доступны ниже, страница описания требует JavaScript.</p></noscript>
     <form id="filters" class="bg-light border rounded p-3 mb-3" role="search" aria-label="Поиск маршрутов">
       <div class="row g-3 align-items-end">
@@ -46,7 +46,7 @@
             <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
             <h2 class="card-title h5">Бадукские озёра</h2>
             <p><span class="badge text-bg-light border">Средняя</span> <span class="small">3,5 км в одну сторону</span></p>
-            <p class="card-text">Тропа проходит через лес к каскаду из трёх горных озёр. Возвращение — по тому же пути; полная прогулка составляет около 7 км.</p>
+            <p class="card-text">Тропа проходит через лес к каскаду из трёх горных озёр.</p>
             <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=baduk">Подробнее<span class="visually-hidden">: Бадукские озёра</span></a>
           </div>
         </article>
@@ -58,7 +58,7 @@
             <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
             <h2 class="card-title h5">Водопад Шумка</h2>
             <p><span class="badge text-bg-light border">Лёгкая</span> <span class="small">0,5 км в одну сторону</span></p>
-            <p class="card-text">Короткая лесная тропа к водопаду. Расстояние указано в одну сторону — обратный путь тоже нужно учитывать.</p>
+            <p class="card-text">Короткая лесная тропа к водопаду.</p>
             <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=shumka">Подробнее<span class="visually-hidden">: Водопад Шумка</span></a>
           </div>
         </article>
@@ -114,13 +114,13 @@
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
-      <div class="row g-3">
-        <div class="col-12 col-md-4">
+      <div class="footer-layout">
+        <div>
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
           <p class="small mb-2">Выберите тропу и откройте природу пешком.</p>
           <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
         </div>
-        <div class="col-12 col-md-4">
+        <div>
           <h2 class="h6">Навигация</h2>
           <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
             <a href="index.html" class="link-success">Главная</a>
@@ -128,7 +128,7 @@
             <a href="preparation.html" class="link-success">О проекте и подготовка</a>
           </nav>
         </div>
-        <div class="col-12 col-md-4">
+        <div>
           <h2 class="h6">Контакты автора</h2>
           <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
           <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
@@ -136,7 +136,7 @@
       </div>
     </div>
   </footer>
-  <a class="back-to-top btn btn-success" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
+  <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">

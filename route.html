@@ -6,10 +6,10 @@
   <meta name="description" content="Описание пешего маршрута: расстояние, регион, особенности и официальный источник.">
   <title>Описание маршрута — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111b">
+  <link rel="stylesheet" href="css/custom.css?v=20261111c">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111b" defer></script>
-  <script src="js/main.js?v=20261111" defer></script>
+  <script src="js/routes.js?v=20261111c" defer></script>
+  <script src="js/main.js?v=20261111c" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -40,15 +40,13 @@
           <p id="route-text"></p>
         </section>
       </div>
-      <div class="table-responsive"><table class="table table-bordered"><caption>Основные сведения о выбранном маршруте</caption><tbody><tr><th scope="row">Регион</th><td id="table-region"></td></tr><tr><th scope="row">Территория</th><td id="table-park"></td></tr><tr><th scope="row">Длина</th><td id="table-length"></td></tr><tr><th scope="row">Время</th><td id="table-time"></td></tr><tr><th scope="row">Способ передвижения</th><td>Пешком</td></tr><tr><th scope="row">Условная сложность</th><td id="table-level"></td></tr></tbody></table></div>
-      <p class="small text-secondary">Оценка сложности редакционная и не является официальной категорией. Описание не заменяет схему и правила парка.</p>
+      <div class="table-responsive"><table class="table table-bordered"><caption>Основные сведения о выбранном маршруте</caption><tbody><tr><th scope="row">Регион</th><td id="table-region"></td></tr><tr><th scope="row">Территория</th><td id="table-park"></td></tr><tr><th scope="row">Длина</th><td id="table-length"></td></tr><tr><th scope="row">Время</th><td id="table-time"></td></tr><tr><th scope="row">Способ передвижения</th><td>Пешком</td></tr><tr><th scope="row">Сложность</th><td id="table-level"></td></tr></tbody></table></div>
       <p>Источник сведений: <span id="route-source"></span>. Адреса источников перечислены в документации проекта.</p>
       <section class="my-4 p-3 p-md-4 border rounded-3">
         <h2 class="h4">Начало маршрута на карте</h2>
         <p class="mb-2">Координаты по данным парка: <span id="route-coordinates"></span> (широта, долгота).</p>
         <p class="small text-secondary">Метка показывает начало тропы. Схему всего пути уточняйте у парка.</p>
-        <button type="button" class="btn btn-outline-success" id="show-map" aria-controls="route-map" aria-expanded="false">Показать Яндекс Карту</button>
-        <iframe id="route-map" class="route-map mt-3 rounded" title="Яндекс Карта — начало маршрута" hidden></iframe>
+        <iframe id="route-map" class="route-map mt-3 rounded" title="Яндекс Карта — начало маршрута"></iframe>
       </section>
       <div class="alert alert-info">Перед поездкой уточните погоду, сезонные ограничения и доступность тропы у национального парка. Каталог не показывает текущий статус открытия маршрутов.</div>
       <a class="btn btn-outline-success" href="preparation.html">Как подготовиться</a>
@@ -56,13 +54,13 @@
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
-      <div class="row g-3">
-        <div class="col-12 col-md-4">
+      <div class="footer-layout">
+        <div>
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
           <p class="small mb-2">Выберите тропу и откройте природу пешком.</p>
           <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
         </div>
-        <div class="col-12 col-md-4">
+        <div>
           <h2 class="h6">Навигация</h2>
           <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
             <a href="index.html" class="link-success">Главная</a>
@@ -70,7 +68,7 @@
             <a href="preparation.html" class="link-success">О проекте и подготовка</a>
           </nav>
         </div>
-        <div class="col-12 col-md-4">
+        <div>
           <h2 class="h6">Контакты автора</h2>
           <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
           <button id="route-question" class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
@@ -78,7 +76,7 @@
       </div>
     </div>
   </footer>
-  <a class="back-to-top btn btn-success" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
+  <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">

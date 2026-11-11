@@ -8,6 +8,13 @@ html { scroll-padding-top: 5rem; }
 .hero-kicker, .footer-brand, footer address a { color: #14532d; }
 .footer-brand { text-decoration: none; }
 .footer-brand:hover { text-decoration: underline; }
+.footer-layout { display: grid; gap: 1.25rem; }
+@media (min-width: 768px) {
+  .footer-layout {
+    grid-template-columns: minmax(0, 1fr) max-content max-content;
+    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+}
 .back-to-top {
   position: fixed;
   right: 1rem;
@@ -17,6 +24,17 @@ html { scroll-padding-top: 5rem; }
   place-items: center;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
+  --bs-btn-color: #14532d;
+  --bs-btn-bg: #e5f0e9;
+  --bs-btn-border-color: #bdd5c6;
+  --bs-btn-hover-color: #14532d;
+  --bs-btn-hover-bg: #d3e7da;
+  --bs-btn-hover-border-color: #8eb6a0;
+  --bs-btn-active-color: #14532d;
+  --bs-btn-active-bg: #c7dfd0;
+  --bs-btn-active-border-color: #8eb6a0;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
 }
 .back-to-top span::before,
 .back-to-top span::after {
