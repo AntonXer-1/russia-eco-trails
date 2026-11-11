@@ -51,7 +51,7 @@
 | `images/book-fern.jpg` | [Папоротник, наблюдение №175859336](https://www.inaturalist.org/observations/175859336), в долине Лалетины | Илья Руденко, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/305667948) |
 | `images/white-stellaria.jpg` | [Звездчатка, наблюдение №375128190](https://www.inaturalist.org/observations/375128190), в окрестностях «Белой тропы» | Tatyana Petrenko, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/685737142) |
 
-Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
+Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm), [памяткой NPS по планированию похода](https://www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 
 ## Библиотека и методички
 
