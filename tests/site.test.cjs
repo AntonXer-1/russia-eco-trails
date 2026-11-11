@@ -50,7 +50,7 @@ for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
       assert.equal(await crumbs.locator('li').last().locator('a').count(), 0);
     }
     assert.equal(await page.locator('footer .footer-brand img').count(), 1);
-    assert.equal(await page.locator('footer').getByText('Откройте природу пешком', {exact: true}).count(), 1);
+    assert.equal(await page.locator('footer').getByText('Экотропы. Открой природу пешком.', {exact: true}).count(), 1);
     assert.equal(await page.locator('footer a[href="mailto:antonmister6@gmail.com"]').count(), 1);
     assert.equal(await page.locator('footer a[href="tel:+79582009066"]').count(), 1);
     const outside = await page.locator('a[href]').evaluateAll(links =>
