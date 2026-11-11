@@ -32,7 +32,7 @@ Bootstrap подключён **локально**, что в тетради №1
 
 ```html
 <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css?v=20261111c">
+<link rel="stylesheet" href="css/custom.css?v=20261111d">
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 ```
 
@@ -44,7 +44,7 @@ Bootstrap подключён **локально**, что в тетради №1
 index.html              главная, три маршрута, о проекте, FAQ
 catalog.html            шесть маршрутов, поиск и фильтры
 route.html              описание выбранного маршрута по ?id=...
-preparation.html        о проекте, список вещей и советы
+preparation.html        перед выездом, список вещей и советы на тропе
 css/custom.css          небольшие дополнения к Bootstrap
 js/routes.js            данные шести маршрутов
 js/main.js              фильтры, описание маршрута, карта и учебная форма

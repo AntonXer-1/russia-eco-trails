@@ -6,7 +6,7 @@
   <meta name="description" content="Список вещей для прогулки по экотропе и советы по подготовке к посещению национального парка.">
   <title>Подготовка к походу — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111c">
+  <link rel="stylesheet" href="css/custom.css?v=20261111d">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/routes.js?v=20261111c" defer></script>
   <script src="js/main.js?v=20261111c" defer></script>
@@ -24,45 +24,73 @@
       </div>
     </nav>
   </header>
-  <main class="container py-4" id="main">
-    <h1>О проекте и подготовка к прогулке</h1>
-    <p class="lead">Как устроен каталог и что проверить перед выходом на тропу.</p>
-    <section class="hero rounded p-3 p-md-4 mb-4" aria-labelledby="project-title">
+  <main id="main">
+    <section class="prep-screen container" aria-labelledby="prep-title">
       <div class="row g-4 align-items-center">
-        <div class="col-12 col-lg-6">
-          <h2 class="h3" id="project-title">Для кого этот каталог</h2>
-          <p>«Экотропы России» — каталог прогулок по национальным паркам. Здесь можно посмотреть шесть маршрутов, сравнить длину и выбрать подходящие варианты через фильтры.</p>
-          <p>В подборку вошли тропы Тебердинского национального парка и «Красноярских Столбов». Одни проходят у воды, другие знакомят с лесом и скальными формами. Раздел подготовки помогает перейти от выбора к планированию.</p>
+        <div class="col-12 col-md-6">
+          <h1 id="prep-title">Подготовка к прогулке</h1>
+          <p class="lead mb-4">Выберите тропу по силам и проверьте условия перед выездом.</p>
+          <ul class="list-unstyled mb-4">
+            <li class="border-bottom pb-3 mb-3"><strong class="d-block">Доступ в парк</strong>Проверьте время работы, сезонные ограничения и нужен ли пропуск.</li>
+            <li class="border-bottom pb-3 mb-3"><strong class="d-block">Погода и световой день</strong>Посмотрите прогноз и время заката. Подберите длину тропы с учётом подготовки группы.</li>
+            <li><strong class="d-block">Маршрут и связь</strong>Сохраните схему для просмотра без интернета. Сообщите близким, куда идёте и когда вернётесь.</li>
+          </ul>
           <a href="catalog.html" class="btn btn-success">Открыть каталог</a>
         </div>
-        <div class="col-12 col-lg-6"><img src="images/lake.jpg" class="img-fluid rounded" width="900" height="600" alt="Горное озеро — иллюстрация к разделу о проекте"></div>
+        <div class="col-12 col-md-6">
+          <img src="images/lake.jpg" class="img-fluid rounded-3" width="900" height="600" alt="Иллюстрация: озеро в горах">
+        </div>
       </div>
     </section>
-    <section class="mb-4" aria-labelledby="sources-title">
-      <h2 class="h4" id="sources-title">Как читать сведения о тропах</h2>
-      <p>Названия, расстояния и детали взяты из открытых описаний парков.</p>
-      <p>Источник назван в описании каждого маршрута. Текущие ограничения, пропуска и состояние тропы уточняйте непосредственно у парка.</p>
+
+    <section class="prep-screen prep-panel border-top border-bottom" aria-labelledby="packing-title">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-md-6">
+            <h2 id="packing-title">Что взять с собой</h2>
+            <p>Отметьте собранные вещи. Отметки действуют до перезагрузки страницы.</p>
+            <div class="bg-white border rounded-3 p-3 p-md-4">
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-0"><label class="form-check-label" for="packing-0">Вода и перекус</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-1"><label class="form-check-label" for="packing-1">Удобная обувь</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-2"><label class="form-check-label" for="packing-2">Одежда по погоде и дождевик</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-3"><label class="form-check-label" for="packing-3">Заряженный телефон</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-4"><label class="form-check-label" for="packing-4">Карта или схема маршрута</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-5"><label class="form-check-label" for="packing-5">Личная аптечка</label></div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" id="packing-6"><label class="form-check-label" for="packing-6">Пакет для своего мусора</label></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="images/forest.jpg" class="img-fluid rounded-3" width="900" height="600" loading="lazy" alt="Иллюстрация: лесная тропа">
+          </div>
+        </div>
+      </div>
     </section>
-    <div class="row g-4 mt-1">
-      <section class="col-12 col-lg-6"><div class="prep-panel h-100 border rounded-3 p-3 p-md-4"><h2 class="h4">Что взять с собой</h2><p>Отметьте собранные вещи. Отметки действуют до перезагрузки страницы.</p><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-0"><label class="form-check-label" for="packing-0">Вода и перекус</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-1"><label class="form-check-label" for="packing-1">Удобная обувь</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-2"><label class="form-check-label" for="packing-2">Одежда по погоде и дождевик</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-3"><label class="form-check-label" for="packing-3">Заряженный телефон</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-4"><label class="form-check-label" for="packing-4">Карта или схема маршрута</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-5"><label class="form-check-label" for="packing-5">Личная аптечка</label></div><div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="packing-6"><label class="form-check-label" for="packing-6">Пакет для своего мусора</label></div></div></section>
-      <section class="col-12 col-lg-6"><div class="prep-panel h-100 border rounded-3 p-3 p-md-4"><h2 class="h4">Перед выходом</h2><ol><li class="mb-2">Проверьте официальный сайт парка: режим посещения, пропуск и сезонные ограничения.</li><li class="mb-2">Посмотрите прогноз погоды и время заката.</li><li class="mb-2">Сообщите близким, куда идёте и когда планируете вернуться.</li><li class="mb-2">Скачайте схему: на природной территории связь может отсутствовать.</li><li>Выберите расстояние с учётом своей подготовки и состава группы.</li></ol><a class="btn btn-outline-success" href="catalog.html">Перейти к маршрутам</a></div></section>
-    </div>
-    <section class="mt-5"><h2 class="h4">На тропе</h2><div class="row g-3"><div class="col-12 col-md-4"><div class="border rounded p-3 h-100"><h3 class="h5">Держитесь маршрута</h3><p class="mb-0">Следуйте указателям и правилам парка, не заходите на закрытые участки.</p></div></div><div class="col-12 col-md-4"><div class="border rounded p-3 h-100"><h3 class="h5">Берегите природу</h3><p class="mb-0">Не оставляйте мусор, не кормите животных и не повреждайте растения.</p></div></div><div class="col-12 col-md-4"><div class="border rounded p-3 h-100"><h3 class="h5">Следите за временем</h3><p class="mb-0">Следите за временем заката и учитывайте остановки. При ухудшении условий завершите прогулку раньше.</p></div></div></div></section>
+
+    <section class="prep-screen container" aria-labelledby="on-trail-title">
+      <h2 id="on-trail-title" class="mb-3">На тропе</h2>
+      <img src="images/mountains.jpg" class="prep-banner rounded-3 mb-4" width="900" height="600" loading="lazy" alt="Иллюстрация: горный хребет">
+      <div class="row g-3 mb-4">
+        <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Держитесь маршрута</h3><p class="mb-0">Следуйте указателям и обходите закрытые участки по разрешённым тропам.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Берегите природу</h3><p class="mb-0">Забирайте мусор с собой, не кормите животных и не повреждайте растения.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded-3 p-3 h-100"><h3 class="h5">Следите за временем</h3><p class="mb-0">Учитывайте остановки. Если погода ухудшится, завершите прогулку раньше.</p></article></div>
+      </div>
+      <p class="small text-secondary mb-0">В карточках указаны длина и время по данным Тебердинского национального парка и «Красноярских Столбов». Состояние троп и правила посещения уточняйте у парка.</p>
+    </section>
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
     <div class="container">
       <div class="footer-layout">
         <div>
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
-          <p class="small mb-2">Выберите тропу и откройте природу пешком.</p>
-          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+          <p class="small mb-2">Откройте природу пешком</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25<br>Все права защищены.</p>
         </div>
         <div>
           <h2 class="h6">Навигация</h2>
           <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
             <a href="index.html" class="link-success">Главная</a>
             <a href="catalog.html" class="link-success">Каталог</a>
-            <a href="preparation.html" class="link-success">О проекте и подготовка</a>
+            <a href="preparation.html" class="link-success">Подготовка</a>
           </nav>
         </div>
         <div>
