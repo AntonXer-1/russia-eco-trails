@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="О каталоге «Экотропы России», его маршрутах и источниках сведений.">
+  <title>О проекте — Экотропы России</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261111g">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/routes.js?v=20261111g" defer></script>
+  <script src="js/main.js?v=20261111g" defer></script>
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="site-menu">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">О проекте</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4 py-md-5" id="main">
+    <section class="hero rounded-3 p-3 p-md-4 mb-4" aria-labelledby="about-title">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-6">
+          <h1 id="about-title">О проекте</h1>
+          <p class="lead">«Экотропы России» — каталог пеших маршрутов по национальным паркам.</p>
+          <p class="mb-0">В подборке шесть троп Тебердинского национального парка и «Красноярских Столбов»: от короткой прогулки до маршрута на несколько часов.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="images/mountains.jpg" class="img-fluid rounded-3" width="900" height="600" alt="Горный пейзаж — иллюстрация к каталогу">
+        </div>
+      </div>
+    </section>
+    <section class="mb-4" aria-labelledby="sources-title">
+      <h2 class="h3 mb-3" id="sources-title">Что есть в карточках</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4"><article class="border rounded-3 h-100 p-3"><h3 class="h5">Расстояние и время</h3><p class="mb-0">Длина и длительность взяты из описаний парков. Если расстояние указано в одну сторону, это отмечено рядом с числом.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded-3 h-100 p-3"><h3 class="h5">Точка старта</h3><p class="mb-0">Яндекс Карта показывает координаты начала маршрута по данным парка.</p></article></div>
+        <div class="col-12 col-md-4"><article class="border rounded-3 h-100 p-3"><h3 class="h5">Фотографии мест</h3><p class="mb-0">У опубликованных снимков указаны авторы и лицензии. Иллюстрации на общих страницах подписаны отдельно.</p></article></div>
+      </div>
+    </section>
+    <section class="prep-panel rounded-3 p-3 p-md-4" aria-labelledby="visit-title">
+      <h2 class="h4" id="visit-title">Перед посещением</h2>
+      <p>Режим работы и доступность троп уточняйте у национального парка. В подвале указаны контакты сайта «Экотропы России».</p>
+      <a class="btn btn-outline-success" href="preparation.html">Подготовиться к прогулке</a>
+    </section>
+  </main>
+  <footer class="bg-light border-top py-4" id="contacts">
+    <div class="container">
+      <div class="footer-layout">
+        <div>
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small text-secondary mb-0">Экотропы России. Все права защищены.</p>
+        </div>
+        <div class="footer-navigation">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-center gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">Подготовка</a>
+            <a href="about.html" class="link-success">О проекте</a>
+          </nav>
+        </div>
+        <div class="footer-contacts">
+          <h2 class="h6">Контакты</h2>
+          <address class="small mb-3">
+            <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–10:00 (МСК)</span>
+            <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
+          </address>
+          <a class="btn btn-outline-success btn-sm" href="catalog.html">Выбрать маршрут</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
+</body>
+</html>

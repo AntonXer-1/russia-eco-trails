@@ -6,20 +6,25 @@
   <meta name="description" content="Описание пешего маршрута: расстояние, регион, особенности и официальный источник.">
   <title>Описание маршрута — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111f">
+  <link rel="stylesheet" href="css/custom.css?v=20261111g">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111f" defer></script>
-  <script src="js/main.js?v=20261111f" defer></script>
+  <script src="js/routes.js?v=20261111g" defer></script>
+  <script src="js/main.js?v=20261111g" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
   <header class="sticky-top bg-white border-bottom">
-    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
       <div class="container">
-        <a class="navbar-brand fw-bold text-success" href="index.html">Экотропы России</a>
+        <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="site-menu">
-          <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li><li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li></ul>
+          <ul class="navbar-nav text-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О проекте</a></li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -45,14 +50,17 @@
       </div>
       <div class="table-responsive"><table class="table table-bordered"><caption>Основные сведения о выбранном маршруте</caption><tbody><tr><th scope="row">Регион</th><td id="table-region"></td></tr><tr><th scope="row">Территория</th><td id="table-park"></td></tr><tr><th scope="row">Длина</th><td id="table-length"></td></tr><tr><th scope="row">Время</th><td id="table-time"></td></tr><tr><th scope="row">Способ передвижения</th><td>Пешком</td></tr><tr><th scope="row">Сложность</th><td id="table-level"></td></tr></tbody></table></div>
       <p>Источник сведений: <span id="route-source"></span>. Адреса источников перечислены в документации проекта.</p>
-      <section class="my-4 p-3 p-md-4 border rounded-3">
-        <h2 class="h4">Начало маршрута на карте</h2>
+      <section class="my-4 p-3 p-md-4 border rounded-3" aria-labelledby="route-map-title">
+        <h2 class="h4" id="route-map-title">Начало маршрута на карте</h2>
         <p class="mb-2">Координаты по данным парка: <span id="route-coordinates"></span> (широта, долгота).</p>
         <p class="small text-secondary">Метка показывает начало тропы. Схему всего пути уточняйте у парка.</p>
         <iframe id="route-map" class="route-map mt-3 rounded" title="Яндекс Карта — начало маршрута"></iframe>
       </section>
       <div class="alert alert-info">Перед поездкой уточните погоду, сезонные ограничения и доступность тропы у национального парка. Каталог не показывает текущий статус открытия маршрутов.</div>
-      <a class="btn btn-outline-success" href="preparation.html">Как подготовиться</a>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-success" href="preparation.html">Как подготовиться</a>
+        <button id="route-question" class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Попробовать форму</button>
+      </div>
     </section>
   </main>
   <footer class="bg-light border-top py-4" id="contacts">
@@ -60,21 +68,26 @@
       <div class="footer-layout">
         <div>
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
-          <p class="small mb-2">Откройте природу пешком</p>
-          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25<br>Все права защищены.</p>
+          <p class="small text-secondary mb-0">Экотропы России. Все права защищены.</p>
         </div>
-        <div>
+        <div class="footer-navigation">
           <h2 class="h6">Навигация</h2>
-          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-center gap-1">
             <a href="index.html" class="link-success">Главная</a>
             <a href="catalog.html" class="link-success">Каталог</a>
             <a href="preparation.html" class="link-success">Подготовка</a>
+            <a href="about.html" class="link-success">О проекте</a>
           </nav>
         </div>
-        <div>
-          <h2 class="h6">Контакты автора</h2>
-          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
-          <button id="route-question" class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
+        <div class="footer-contacts">
+          <h2 class="h6">Контакты</h2>
+          <address class="small mb-3">
+            <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–10:00 (МСК)</span>
+            <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
+          </address>
+          <a class="btn btn-outline-success btn-sm" href="catalog.html">Выбрать маршрут</a>
         </div>
       </div>
     </div>

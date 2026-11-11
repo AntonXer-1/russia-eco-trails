@@ -6,20 +6,25 @@
   <meta name="description" content="Каталог пеших маршрутов и экологических троп России: описание, расстояния и подготовка к прогулке.">
   <title>Главная — Экотропы России</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111f">
+  <link rel="stylesheet" href="css/custom.css?v=20261111g">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111f" defer></script>
-  <script src="js/main.js?v=20261111f" defer></script>
+  <script src="js/routes.js?v=20261111g" defer></script>
+  <script src="js/main.js?v=20261111g" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
   <header class="sticky-top bg-white border-bottom">
-    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
       <div class="container">
-        <a class="navbar-brand fw-bold text-success" href="index.html">Экотропы России</a>
+        <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="site-menu">
-          <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li><li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li></ul>
+          <ul class="navbar-nav text-center">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О проекте</a></li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -81,17 +86,10 @@
           </div>
         </article>
       </div></div></section>
-    <section class="hero rounded p-3 p-md-4 mb-5" aria-labelledby="about-title">
-      <div class="row g-4 align-items-center">
-        <div class="col-12 col-lg-6">
-          <h2 class="h3" id="about-title">О проекте</h2>
-          <p>Каталог помогает сравнить прогулки по национальным паркам, если вы только знакомитесь с экотропами или выбираете маршрут на выходные. В карточках собраны расстояния, особенности и названия парков.</p>
-          <p>Короткая тропа и длинный горный маршрут требуют разной подготовки. Сравните расстояния и загляните в список вещей перед поездкой.</p>
-          <p>Данные справочные: условия посещения и открытие троп проверяйте у парка.</p>
-          <a href="preparation.html" class="btn btn-outline-success">Как подготовиться</a>
-        </div>
-        <div class="col-12 col-lg-6"><img src="images/mountains.jpg" class="img-fluid rounded" width="900" height="600" alt="Горный пейзаж — иллюстрация к каталогу"></div>
-      </div>
+    <section class="hero rounded-3 p-3 p-md-4 mb-5" aria-labelledby="about-title">
+      <h2 class="h3" id="about-title">О проекте</h2>
+      <p>В каталоге собраны тропы Тебердинского национального парка и «Красноярских Столбов».</p>
+      <a class="btn btn-outline-success" href="about.html">Подробнее о проекте</a>
     </section>
     <section class="mb-5" aria-labelledby="steps-title">
       <h2 class="h3 mb-3" id="steps-title">Как выбрать маршрут</h2>
@@ -141,45 +139,30 @@
       <div class="footer-layout">
         <div>
           <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
-          <p class="small mb-2">Откройте природу пешком</p>
-          <p class="small text-secondary mb-0">© 2026 Экотропы России · Чернышев Антон Дмитриевич · ЭФБО-02-25<br>Все права защищены.</p>
+          <p class="small text-secondary mb-0">Экотропы России. Все права защищены.</p>
         </div>
-        <div>
+        <div class="footer-navigation">
           <h2 class="h6">Навигация</h2>
-          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-start gap-1">
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-center gap-1">
             <a href="index.html" class="link-success">Главная</a>
             <a href="catalog.html" class="link-success">Каталог</a>
             <a href="preparation.html" class="link-success">Подготовка</a>
+            <a href="about.html" class="link-success">О проекте</a>
           </nav>
         </div>
-        <div>
-          <h2 class="h6">Контакты автора</h2>
-          <address class="small mb-2"><a href="mailto:antonmister6@gmail.com">antonmister6@gmail.com</a><br><a href="tel:+79582009066">+7 958 200 90 66</a><br><a href="https://t.me/AntonXer">Telegram @AntonXer</a></address>
-          <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" data-route="">Попробовать форму</button>
+        <div class="footer-contacts">
+          <h2 class="h6">Контакты</h2>
+          <address class="small mb-3">
+            <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–10:00 (МСК)</span>
+            <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
+          </address>
+          <a class="btn btn-outline-success btn-sm" href="catalog.html">Выбрать маршрут</a>
         </div>
       </div>
     </div>
   </footer>
   <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
-  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedback-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header"><h2 class="modal-title fs-5" id="feedback-title">Вопрос о маршруте</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
-        <div class="modal-body">
-          <p class="alert alert-info small" id="form-note">Демонстрационная форма проверяет поля в браузере. Данные не отправляются и не сохраняются.</p>
-          <form id="feedback-form" aria-describedby="form-note">
-            <div class="mb-3"><label class="form-label" for="name">Имя *</label><input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required></div>
-            <div class="mb-3"><label class="form-label" for="email">Электронная почта *</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
-            <div class="mb-3"><label class="form-label" for="phone">Телефон *</label><div class="input-group"><span class="input-group-text" id="phone-prefix">+7</span><input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required></div><div class="form-text" id="phone-hint">10 цифр без +7, например 9001234567.</div></div>
-            <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option></select></div>
-            <div class="mb-3"><label class="form-label" for="comment">Вопрос или комментарий</label><textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea></div>
-            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на проверку данных в браузере без отправки и сохранения *</label></div>
-            <p class="small text-secondary">* Обязательные поля.</p><button class="btn btn-success" type="submit" disabled>Проверить обращение</button>
-          </form>
-          <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Поля заполнены верно. Данные не отправлены и не сохранены.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

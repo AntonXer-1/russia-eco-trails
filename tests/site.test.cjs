@@ -26,7 +26,7 @@ after(async () => {await browser?.close(); await new Promise(resolve => server?.
 const mapWidget = 'https://yandex.ru/map-widget/v1/';
 const mockMap = page => page.route(mapWidget + '**', route => route.fulfill({body: 'Map'}));
 
-for (const file of ['index.html','catalog.html','route.html','preparation.html']) {
+for (const file of ['index.html','catalog.html','route.html','preparation.html','about.html']) {
   test(`${file}: resources, links, responsive layout and sticky header`, async () => {
     const page = await browser.newPage(); const errors = [], external = [];
     await mockMap(page);
@@ -40,8 +40,14 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
     assert.equal(await page.locator('footer a[href="tel:+79582009066"]').count(), 1);
     const outside = await page.locator('a[href]').evaluateAll(links =>
       links.filter(link => /^https?:$/.test(link.protocol) && link.origin !== location.origin).map(link => link.href));
-    assert.deepEqual(outside, ['https://t.me/AntonXer'], 'only Telegram is linked externally');
-    assert.equal(await page.locator('footer a[href="https://t.me/AntonXer"]').count(), 1);
+    assert.deepEqual(outside, [], 'site navigation stays on the site');
+    assert.equal(await page.locator('footer span.contact-item').filter({hasText: 'Telegram @AntonXer'}).count(), 1);
+    assert.equal(await page.locator('footer .contact-icon').count(), 4);
+    await page.waitForFunction(() => [...document.querySelectorAll('footer .contact-icon use')]
+      .every(icon => icon.getBBox().width > 0));
+    assert.equal(await page.locator('footer').getByText('Экотропы России. Все права защищены.').count(), 1);
+    assert.deepEqual(await page.locator('header .nav-link').evaluateAll(links => links.map(link => link.getAttribute('href'))),
+      ['index.html', 'catalog.html', 'preparation.html', 'about.html']);
     await page.locator('img').evaluateAll(nodes => nodes.forEach(n => n.loading = 'eager'));
     await page.waitForFunction(() => [...document.images].every(n => n.complete && n.naturalWidth > 0));
     const resources = await page.locator('img').evaluateAll(nodes => nodes.map(n => n.complete && n.naturalWidth > 0));
@@ -57,6 +63,10 @@ for (const file of ['index.html','catalog.html','route.html','preparation.html']
       assert.equal(await page.locator('header').evaluate(e=>Math.round(e.getBoundingClientRect().top)),0);
       await page.getByRole('link', {name: 'Наверх', exact: true}).click();
       await page.waitForFunction(() => scrollY === 0);
+    }
+    for (const selector of ['header .navbar-nav', '.footer-navigation']) {
+      const box = await page.locator(selector).boundingBox();
+      assert.ok(Math.abs(box.x + box.width / 2 - 640) <= 1, selector + ' is centered');
     }
     assert.deepEqual(errors, []);
     assert.equal(external.length, file === 'route.html' ? 1 : 0);
@@ -126,7 +136,7 @@ test('modal preselects route, validates form, reports demo success without sendi
   p.on('request',r=>{if(r.method()!=='GET')sent.push(r.url());});
   await p.goto(base+'route.html?id=laleto');
   assert.equal(await p.locator('#route-about').textContent(), 'О маршруте');
-  assert.equal(await p.locator('footer #route-question').count(), 1);
+  assert.equal(await p.locator('main #route-question').count(), 1);
   await p.locator('#route-question').click();
   await p.waitForFunction(()=>document.activeElement?.id==='feedbackModal');
   assert.equal(await p.locator('[name=route]').inputValue(),'laleto');

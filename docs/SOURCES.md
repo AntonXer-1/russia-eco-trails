@@ -32,7 +32,7 @@
 
 ## Фотографии
 
-Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). Снимки в карточках и описаниях четырёх маршрутов показывают реальные места. В карточках фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
+Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). В карточках четырёх маршрутов показаны реальные места. Для «Книги природы» и «Белой тропы» использованы снимки наблюдений природы рядом с тропами. В карточках фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
 
 | Файл | Снимок и источник | Автор и лицензия |
 | --- | --- | --- |
@@ -42,6 +42,9 @@
 | `images/feathers.jpg` | [Скала Перья](https://commons.wikimedia.org/wiki/File:Скала_Перья._Заповедник_Столбы.jpg), точка [скального маршрута](https://kras-stolby.ru/posetitelyam/marshruty/priroda-velikij-skulptor-1/) | Александра Григоренко, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `images/shumka.jpg` | [Водопад Шумка](https://commons.wikimedia.org/wiki/File:Водопад_Шумка_(2).jpg) | Legioner2016, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `images/laleto.jpg` | [Деревянная скульптура у кордона Лалетино](https://commons.wikimedia.org/wiki/File:Деревянная_скульптура._-_panoramio.jpg), рядом с началом [Лалетинского маршрута](https://kras-stolby.ru/posetitelyam/marshruty/laletinskaya-doroga-1/) | Станислав Соломахин, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
+| `images/gear.jpg` | [Рюкзак, треккинговые палки и обувь](https://commons.wikimedia.org/wiki/File:A_backpack_with_trekking_poles_and_shoes.jpg) | SGrabarczuk (WMF), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/book.jpg` | [Синюха голубая, наблюдение iNaturalist №175859170](https://www.inaturalist.org/observations/175859170), в долине Лалетины между началом и концом экотропы; координаты 55.9488717, 92.7449717 | Илья Руденко, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/305667667) |
+| `images/white.jpg` | [Бабочка, наблюдение iNaturalist №393199105](https://www.inaturalist.org/observations/393199105), рядом с началом «Белой тропы»; координаты 55.9170942, 92.7232307 | Pribylova Maria, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 

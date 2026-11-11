@@ -9,11 +9,22 @@ html { scroll-padding-top: 5rem; }
 .footer-brand { text-decoration: none; }
 .footer-brand:hover { text-decoration: underline; }
 .footer-layout { display: grid; gap: 1.25rem; }
+.footer-navigation { text-align: center; }
+.contact-item { display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem; }
+.contact-icon { flex: 0 0 1rem; color: #14532d; }
 @media (min-width: 768px) {
   .footer-layout {
-    grid-template-columns: minmax(0, 1fr) max-content max-content;
-    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    column-gap: 1.5rem;
   }
+  .footer-contacts { justify-self: end; }
+}
+@media (min-width: 992px) {
+  .site-navbar > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .site-navbar .navbar-brand { justify-self: start; }
 }
 .back-to-top {
   position: fixed;
@@ -47,6 +58,7 @@ html { scroll-padding-top: 5rem; }
   transform: rotate(45deg);
 }
 .hero-photo { width: 100%; max-height: 300px; object-fit: cover; }
+.prep-photo { display: block; width: 100%; height: clamp(230px, 45vw, 380px); object-fit: cover; object-position: center 72%; }
 .catalog-photo { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 #route-image { width: auto; max-height: 360px; }
 .card-title { line-height: 1.4; }
