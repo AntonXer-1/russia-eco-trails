@@ -30,7 +30,9 @@ const breadcrumbs = {
   'catalog.html': ['Главная', 'Каталог'],
   'route.html': ['Главная', 'Каталог', 'Бадукские озёра'],
   'preparation.html': ['Главная', 'Подготовка'],
-  'about.html': ['Главная', 'О проекте']
+  'about.html': ['Главная', 'О проекте'],
+  'account.html': ['Главная', 'Личный кабинет'],
+  'favorites.html': ['Главная', 'Избранное']
 };
 
 for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
@@ -63,7 +65,7 @@ for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
       .every(icon => icon.getBBox().width > 0));
     assert.equal(await page.locator('footer').getByText('© 2026 Экотропы России · Все права защищены', {exact: true}).count(), 1);
     assert.deepEqual(await page.locator('header .nav-link').evaluateAll(links => links.map(link => link.getAttribute('href'))),
-      ['index.html', 'catalog.html', 'preparation.html', 'about.html']);
+      ['index.html', 'catalog.html', 'preparation.html', 'about.html', 'favorites.html', 'account.html']);
     await page.locator('img').evaluateAll(nodes => nodes.forEach(n => n.loading = 'eager'));
     await page.waitForFunction(() => [...document.images].every(n => n.complete && n.naturalWidth > 0));
     const resources = await page.locator('img').evaluateAll(nodes => nodes.map(n => n.complete && n.naturalWidth > 0));
@@ -212,4 +214,57 @@ test('without JavaScript content remains and submit stays disabled', async () =>
   await p.goto(base+'catalog.html');assert.equal(await p.locator('.route-item').count(),6);
   await p.goto(base+'route.html?id=laleto');assert.equal(await p.locator('noscript').isVisible(),true);
   assert.equal(await p.locator('[type=submit]').isDisabled(),true);await context.close();
+});
+
+test('theme persists and local accounts keep their own favorites and routes', async () => {
+  const p = await browser.newPage({viewport: {width: 1280, height: 800}});
+  await p.goto(base + 'index.html');
+  await p.getByRole('button', {name: 'Тёмная тема'}).click();
+  assert.equal(await p.locator('html').getAttribute('data-bs-theme'), 'dark');
+  await p.goto(base + 'account.html');
+  assert.equal(await p.locator('html').getAttribute('data-bs-theme'), 'dark');
+  await p.locator('#account-name').fill('Походник');
+  await p.locator('#account-login').fill('walker');
+  await p.locator('#account-password').fill('DemoPassword123');
+  await p.getByRole('button', {name: 'Создать профиль'}).click();
+  await p.locator('#account-profile').waitFor();
+  await p.goto(base + 'catalog.html');
+  await p.getByRole('button', {name: 'В избранное: Бадукские озёра', exact: true}).click();
+  await p.goto(base + 'favorites.html');
+  assert.equal(await p.locator('#favorite-list h2').textContent(), 'Бадукские озёра');
+  await p.goto(base + 'account.html');
+  await p.locator('#personal-title').fill('Моя тропа');
+  await p.locator('#personal-region').fill('Подмосковье');
+  await p.locator('#personal-distance').fill('4.5');
+  await p.getByRole('button', {name: 'Далее'}).click();
+  await p.locator('#personal-description').fill('Прогулка вдоль лесной реки.');
+  await p.getByRole('button', {name: 'Предпросмотр'}).click();
+  await p.getByRole('button', {name: 'Сохранить маршрут'}).click();
+  await p.reload();
+  assert.equal(await p.locator('#personal-list h3').textContent(), 'Моя тропа');
+  await p.getByRole('button', {name: 'Выйти'}).click();
+  await p.goto(base + 'favorites.html');
+  assert.equal(await p.locator('#favorites-login').isVisible(), true);
+  await p.goto(base + 'account.html');
+  await p.locator('#account-name').fill('Другой профиль');
+  await p.locator('#account-login').fill('another_walker');
+  await p.locator('#account-password').fill('AnotherPassword123');
+  await p.getByRole('button', {name: 'Создать профиль'}).click();
+  await p.locator('#account-profile').waitFor();
+  assert.equal(await p.locator('#personal-empty').isVisible(), true);
+  await p.goto(base + 'favorites.html');
+  assert.equal(await p.locator('#favorites-empty').isVisible(), true);
+  await p.goto(base + 'account.html');
+  await p.getByRole('button', {name: 'Выйти'}).click();
+  await p.locator('#account-login').fill('walker');
+  await p.locator('#account-password').fill('WrongPassword');
+  await p.getByRole('button', {name: 'Войти', exact: true}).click();
+  await p.getByText('Проверьте логин и пароль.').waitFor();
+  await p.locator('#account-password').fill('DemoPassword123');
+  await p.getByRole('button', {name: 'Войти', exact: true}).click();
+  await p.locator('#account-profile').waitFor();
+  await p.goto(base + 'favorites.html');
+  await p.getByRole('button', {name: 'Убрать из избранного: Бадукские озёра', exact: true}).click();
+  assert.equal(await p.locator('#favorites-empty').isVisible(), true);
+  await p.close();
 });

@@ -78,6 +78,7 @@ if (title) {
     const params = new URLSearchParams({ll: point, pt: point + ',pm2rdm', z: '15', lang: 'ru_RU'});
     document.querySelector('#route-map').src = 'https://yandex.ru/map-widget/v1/?' + params;
     document.querySelector('#route-question').dataset.route = trail.id;
+    document.querySelector('[data-favorite]').dataset.favorite = trail.id;
     document.querySelector('#route-details').hidden = false;
   }
 }

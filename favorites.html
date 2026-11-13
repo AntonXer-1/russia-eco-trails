@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Избранное на сайте «Экотропы России».">
+  <title>Избранное — Экотропы России</title>
+  <script src="js/theme.js?v=20261113"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261113">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/routes.js?v=20261111h" defer></script>
+  <script src="js/main.js?v=20261113" defer></script>
+  <script src="js/profile.js?v=20261113" defer></script>
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-body border-bottom">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="site-menu">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="favorites.html">Избранное</a></li>
+            <li class="nav-item"><a class="nav-link" href="account.html">Кабинет</a></li>
+          </ul>
+        </div>
+        <button class="btn btn-outline-secondary theme-toggle" id="theme-toggle" type="button" aria-label="Тёмная тема" disabled><span aria-hidden="true">☾</span></button>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4" id="main">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="link-success" href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Избранное</li>
+      </ol>
+    </nav>
+    <h1 id="favorites-title" tabindex="-1">Избранное</h1>
+    <noscript><p class="alert alert-warning">Для просмотра избранного включите JavaScript.</p></noscript>
+    <p id="favorites-login" hidden><a class="link-success" href="account.html">Войдите в кабинет</a>, чтобы увидеть избранные маршруты.</p>
+    <p id="favorites-empty" hidden>Пока здесь пусто. Добавьте понравившиеся маршруты из <a class="link-success" href="catalog.html">каталога</a>.</p>
+    <div class="row g-3" id="favorite-list"></div>
+    <template id="favorite-template">
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
+          <img class="card-img-top catalog-photo" alt="" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <h2 class="h5"></h2>
+            <p class="small text-body-secondary"></p>
+            <div class="d-flex gap-2 flex-wrap mt-auto">
+              <a class="btn btn-outline-success">Подробнее</a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </template>
+  </main>
+  <footer class="bg-body-tertiary border-top py-4" id="contacts">
+    <div class="container">
+      <div class="footer-layout">
+        <div>
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small mb-3">Экотропы. Открой природу пешком.</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России <span aria-hidden="true" class="mx-1">·</span> Все права защищены</p>
+        </div>
+        <div class="footer-navigation">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-center gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">Подготовка</a>
+            <a href="about.html" class="link-success">О проекте</a>
+          </nav>
+        </div>
+        <div class="footer-contacts">
+          <h2 class="h6">Контакты</h2>
+          <address class="small mb-3">
+            <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–20:00 (МСК)</span>
+            <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
+          </address>
+          <a class="btn btn-outline-success btn-sm" href="catalog.html">Выбрать маршрут</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Личный кабинет на сайте «Экотропы России».">
+  <title>Личный кабинет — Экотропы России</title>
+  <script src="js/theme.js?v=20261113"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261113">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/routes.js?v=20261111h" defer></script>
+  <script src="js/main.js?v=20261113" defer></script>
+  <script src="js/profile.js?v=20261113" defer></script>
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-body border-bottom">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="site-menu">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link" href="favorites.html">Избранное</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="account.html">Кабинет</a></li>
+          </ul>
+        </div>
+        <button class="btn btn-outline-secondary theme-toggle" id="theme-toggle" type="button" aria-label="Тёмная тема" disabled><span aria-hidden="true">☾</span></button>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4" id="main">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="link-success" href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Личный кабинет</li>
+      </ol>
+    </nav>
+    <h1>Личный кабинет</h1>
+    <p>Профили, избранное и личные маршруты хранятся в этом браузере. Для входа придумайте отдельный пароль.</p>
+    <noscript><p class="alert alert-warning">Для входа в кабинет включите JavaScript.</p></noscript>
+    <p id="account-message" class="text-body-secondary" role="status"></p>
+    <section id="account-auth" class="border rounded-3 p-3 p-md-4" hidden>
+      <h2 class="h4">Вход и регистрация</h2>
+      <form class="profile-form">
+        <label class="form-label" for="account-name">Имя (для нового профиля)</label>
+        <input class="form-control mb-3" id="account-name" name="displayName" maxlength="60">
+        <label class="form-label" for="account-login">Логин</label>
+        <input class="form-control mb-2" id="account-login" name="login" pattern="[A-Za-z0-9_]{3,24}" maxlength="24" autocomplete="username" aria-describedby="login-hint" required>
+        <p class="form-text mb-3" id="login-hint">От 3 до 24 символов: латинские буквы, цифры и нижнее подчёркивание.</p>
+        <label class="form-label" for="account-password">Пароль (от 8 символов)</label>
+        <input class="form-control mb-3" type="password" id="account-password" name="password" minlength="8" maxlength="120" required>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-success" type="submit" value="login">Войти</button>
+          <button class="btn btn-outline-success" type="submit" value="register">Создать профиль</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="account-profile" hidden>
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+        <p class="lead mb-0">Профиль <strong id="profile-name"></strong></p>
+        <a class="btn btn-outline-success" href="favorites.html">Моё избранное</a>
+        <button class="btn btn-outline-secondary" id="account-logout" type="button">Выйти</button>
+      </div>
+      <section class="prep-panel border rounded-3 p-3 p-md-4 mb-4" aria-labelledby="wizard-title">
+        <h2 class="h4" id="wizard-title">Добавить личный маршрут</h2>
+        <p class="small text-body-secondary" id="wizard-step" aria-live="polite">1 / 3 · Сведения о маршруте</p>
+        <form id="personal-wizard" class="profile-form">
+          <fieldset>
+            <label class="form-label" for="personal-title">Название</label>
+            <input class="form-control mb-3" id="personal-title" name="title" type="text" maxlength="80" required>
+            <label class="form-label" for="personal-region">Регион или ближайший город</label>
+            <input class="form-control mb-3" id="personal-region" name="region" type="text" maxlength="80" required>
+            <label class="form-label" for="personal-distance">Длина, км</label>
+            <input class="form-control mb-3" id="personal-distance" name="distance" type="number" inputmode="decimal" min="0.01" max="9999" step="0.01" required>
+            <button class="btn btn-success" type="button" data-next>Далее</button>
+          </fieldset>
+          <fieldset hidden disabled>
+            <label class="form-label" for="personal-description">Описание</label>
+            <textarea class="form-control mb-3" id="personal-description" name="description" rows="4" maxlength="1200" placeholder="Где начинается тропа и что встретится по пути?" required></textarea>
+            <button class="btn btn-outline-secondary" type="button" data-previous="0">Назад</button>
+            <button class="btn btn-success" type="button" data-preview>Предпросмотр</button>
+          </fieldset>
+          <fieldset hidden disabled>
+            <div class="border rounded-3 p-3 mb-3">
+              <h3 class="h5" data-preview-title></h3>
+              <p class="small text-body-secondary" data-preview-meta></p>
+              <p class="mb-0 personal-description" data-preview-description></p>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" data-previous="1">Назад</button>
+            <button class="btn btn-success" type="submit">Сохранить маршрут</button>
+          </fieldset>
+        </form>
+        <p id="personal-status" class="mb-0 mt-2" role="status"></p>
+      </section>
+      <section aria-labelledby="personal-list-title">
+        <h2 class="h4" id="personal-list-title">Мои маршруты</h2>
+        <p id="personal-empty">Здесь появятся сохранённые маршруты.</p>
+        <div class="row g-3" id="personal-list"></div>
+        <template id="personal-template">
+          <div class="col-12 col-md-6">
+            <article class="card h-100"><div class="card-body">
+              <h3 class="h5"></h3>
+              <p class="small text-body-secondary" data-personal-meta></p>
+              <p class="personal-description" data-personal-description></p>
+              <button class="btn btn-sm btn-outline-secondary" type="button">Удалить</button>
+            </div></article>
+          </div>
+        </template>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-body-tertiary border-top py-4" id="contacts">
+    <div class="container">
+      <div class="footer-layout">
+        <div>
+          <a class="footer-brand d-inline-flex align-items-center gap-2 fw-bold mb-2" href="index.html"><img src="images/logo.svg" width="36" height="36" alt="">Экотропы России</a>
+          <p class="small mb-3">Экотропы. Открой природу пешком.</p>
+          <p class="small text-secondary mb-0">© 2026 Экотропы России <span aria-hidden="true" class="mx-1">·</span> Все права защищены</p>
+        </div>
+        <div class="footer-navigation">
+          <h2 class="h6">Навигация</h2>
+          <nav aria-label="Навигация в подвале" class="d-flex flex-column align-items-center gap-1">
+            <a href="index.html" class="link-success">Главная</a>
+            <a href="catalog.html" class="link-success">Каталог</a>
+            <a href="preparation.html" class="link-success">Подготовка</a>
+            <a href="about.html" class="link-success">О проекте</a>
+          </nav>
+        </div>
+        <div class="footer-contacts">
+          <h2 class="h6">Контакты</h2>
+          <address class="small mb-3">
+            <a class="contact-item" href="tel:+79582009066"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#phone"></use></svg>+7 958 200 90 66</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#clock"></use></svg>Часы связи: 09:00–20:00 (МСК)</span>
+            <a class="contact-item" href="mailto:antonmister6@gmail.com"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#mail"></use></svg>antonmister6@gmail.com</a>
+            <span class="contact-item"><svg class="contact-icon" aria-hidden="true" width="16" height="16"><use href="images/contact-icons.svg#telegram"></use></svg>Telegram @AntonXer</span>
+          </address>
+          <a class="btn btn-outline-success btn-sm" href="catalog.html">Выбрать маршрут</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="back-to-top btn" href="#top" aria-label="Наверх" title="Наверх"><span aria-hidden="true"></span></a>
+</body>
+</html>

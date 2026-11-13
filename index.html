@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Каталог пеших маршрутов и экологических троп России: описание, расстояния и подготовка к прогулке.">
   <title>Главная — Экотропы России</title>
+  <script src="js/theme.js?v=20261113"></script>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=20261111h">
+  <link rel="stylesheet" href="css/custom.css?v=20261113">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/routes.js?v=20261111h" defer></script>
-  <script src="js/main.js?v=20261111h" defer></script>
+  <script src="js/main.js?v=20261113" defer></script>
+  <script src="js/profile.js?v=20261113" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
-  <header class="sticky-top bg-white border-bottom">
+  <header class="sticky-top bg-body border-bottom">
     <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
       <div class="container">
         <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold text-success" href="index.html"><img src="images/logo.svg" width="28" height="28" alt="">Экотропы России</a>
@@ -24,8 +26,11 @@
             <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
             <li class="nav-item"><a class="nav-link" href="preparation.html">Подготовка</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">О проекте</a></li>
+            <li class="nav-item"><a class="nav-link" href="favorites.html">Избранное</a></li>
+            <li class="nav-item"><a class="nav-link" href="account.html">Кабинет</a></li>
           </ul>
         </div>
+        <button class="btn btn-outline-secondary theme-toggle" id="theme-toggle" type="button" aria-label="Тёмная тема" disabled><span aria-hidden="true">☾</span></button>
       </div>
     </nav>
   </header>
@@ -50,9 +55,12 @@
           <div class="card-body d-flex flex-column">
             <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
             <h2 class="card-title h5">Бадукские озёра</h2>
-            <p><span class="badge text-bg-light border">Средняя</span> <span class="small">3,5 км в одну сторону</span></p>
+            <p><span class="badge text-bg-body-tertiary border">Средняя</span> <span class="small">3,5 км в одну сторону</span></p>
             <p class="card-text">Тропа проходит через лес к каскаду из трёх горных озёр.</p>
-            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=baduk">Подробнее<span class="visually-hidden">: Бадукские озёра</span></a>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=baduk">Подробнее<span class="visually-hidden">: Бадукские озёра</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="baduk" disabled>♡ В избранное</button>
+            </div>
           </div>
         </article>
       </div>
@@ -65,9 +73,12 @@
           <div class="card-body d-flex flex-column">
             <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
             <h2 class="card-title h5">Водопад Шумка</h2>
-            <p><span class="badge text-bg-light border">Лёгкая</span> <span class="small">0,5 км в одну сторону</span></p>
+            <p><span class="badge text-bg-body-tertiary border">Лёгкая</span> <span class="small">0,5 км в одну сторону</span></p>
             <p class="card-text">Короткая лесная тропа к водопаду.</p>
-            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=shumka">Подробнее<span class="visually-hidden">: Водопад Шумка</span></a>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=shumka">Подробнее<span class="visually-hidden">: Водопад Шумка</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="shumka" disabled>♡ В избранное</button>
+            </div>
           </div>
         </article>
       </div>
@@ -80,9 +91,12 @@
           <div class="card-body d-flex flex-column">
             <p class="small text-secondary mb-2">Красноярский край</p>
             <h2 class="card-title h5">Природа — великий скульптор</h2>
-            <p><span class="badge text-bg-light border">Средняя</span> <span class="small">2,5 км по описанию парка</span></p>
+            <p><span class="badge text-bg-body-tertiary border">Средняя</span> <span class="small">2,5 км по описанию парка</span></p>
             <p class="card-text">Маршрут по Центральному скальному району национального парка. Подходит для знакомства с природными скальными формами.</p>
-            <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=sculptor">Подробнее<span class="visually-hidden">: Природа — великий скульптор</span></a>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=sculptor">Подробнее<span class="visually-hidden">: Природа — великий скульптор</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="sculptor" disabled>♡ В избранное</button>
+            </div>
           </div>
         </article>
       </div></div></section>
@@ -134,7 +148,7 @@
       </div>
     </div></section>
   </main>
-  <footer class="bg-light border-top py-4" id="contacts">
+  <footer class="bg-body-tertiary border-top py-4" id="contacts">
     <div class="container">
       <div class="footer-layout">
         <div>
