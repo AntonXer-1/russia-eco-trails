@@ -174,7 +174,7 @@ window.TRAILS = [
     "difficulty": "medium",
     "level": "Средняя",
     "photo": {
-      "file": "kazachiy.jpg",
+      "file": "arkhyz-mountains.jpg",
       "title": "Горы у посёлка Архыз, рядом с началом маршрута",
       "width": 960,
       "height": 640,
@@ -216,7 +216,7 @@ window.TRAILS = [
     "difficulty": "easy",
     "level": "Лёгкая",
     "photo": {
-      "file": "climate.jpg",
+      "file": "climate-trail.jpg",
       "title": "Тропа у канатной дороги в «Красноярских Столбах»",
       "width": 960,
       "height": 636,
