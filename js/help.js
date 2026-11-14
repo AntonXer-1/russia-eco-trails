@@ -58,7 +58,10 @@
     sculptor: /скульптор|скал[аеуы]? перь/iu,
     laleto: /лалетинск|лалетино/iu,
     book: /книг[ауеи] природ/iu,
-    white: /бел(?:ая|ую|ой|ые) троп/iu
+    white: /бел(?:ая|ую|ой|ые) троп/iu,
+    kazachiy: /казач/iu,
+    siberia: /заповедн\S* сибир/iu,
+    climate: /природ\S* и климат|бобров\S* лог/iu
   };
 
   const widget = document.createElement('div');
@@ -114,7 +117,7 @@
   function reply(question) {
     addMessage(question, true);
     const normalized = question.toLocaleLowerCase('ru').replaceAll('ё', 'е');
-    const namedTrail = window.TRAILS.find(trail => routeNames[trail.id].test(normalized));
+    const namedTrail = window.TRAILS.find(trail => routeNames[trail.id]?.test(normalized));
     if (namedTrail) currentTrail = namedTrail;
     const topic = topics.find(item => item.keywords.test(normalized));
     const trail = namedTrail || currentTrail;

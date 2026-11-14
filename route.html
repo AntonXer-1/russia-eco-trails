@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css?v=20261114">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111h" defer></script>
+  <script src="js/routes.js?v=20261114b" defer></script>
   <script src="js/main.js?v=20261113" defer></script>
   <script src="js/profile.js?v=20261113" defer></script>
-  <script src="js/help.js?v=20261114" defer></script>
+  <script src="js/help.js?v=20261114b" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -123,7 +123,7 @@
             <div class="mb-3"><label class="form-label" for="name">Имя *</label><input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required></div>
             <div class="mb-3"><label class="form-label" for="email">Электронная почта *</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
             <div class="mb-3"><label class="form-label" for="phone">Телефон *</label><div class="input-group"><span class="input-group-text" id="phone-prefix">+7</span><input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required></div><div class="form-text" id="phone-hint">10 цифр без +7, например 9001234567.</div></div>
-            <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option></select></div>
+            <div class="mb-3"><label class="form-label" for="route-select">Маршрут *</label><select class="form-select" id="route-select" name="route" required><option value="">Выберите маршрут</option><option value="baduk">Бадукские озёра</option><option value="shumka">Водопад Шумка</option><option value="sculptor">Природа — великий скульптор</option><option value="laleto">Лалетинский</option><option value="book">Книга природы</option><option value="white">Белая тропа</option><option value="kazachiy">Казачий водопад</option><option value="siberia">Заповедная Сибирь</option><option value="climate">Природа и климат</option></select></div>
             <div class="mb-3"><label class="form-label" for="comment">Вопрос или комментарий</label><textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea></div>
             <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required><label class="form-check-label" for="consent">Согласен на проверку данных в браузере без отправки и сохранения *</label></div>
             <p class="small text-secondary">* Обязательные поля.</p><button class="btn btn-success" type="submit" disabled>Проверить обращение</button>

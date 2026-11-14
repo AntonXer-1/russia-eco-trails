@@ -96,18 +96,18 @@ for (const [file, expectedCrumbs] of Object.entries(breadcrumbs)) {
 
 test('search, combined filters, no results and reset', async () => {
   const p=await browser.newPage(); await p.goto(base+'catalog.html');
-  assert.equal(await p.locator('.route-item:visible').count(),6);
+  assert.equal(await p.locator('.route-item:visible').count(),9);
   await p.locator('#search').fill('  БАДУК  ');
   assert.equal(await p.locator('.route-item:visible').count(),1);
   await p.locator('#difficulty').selectOption('easy');
   assert.equal(await p.locator('#empty-results').isVisible(),true);
   await p.getByRole('button',{name:'Сбросить'}).click();
   await p.waitForFunction(()=>[...document.querySelectorAll('.route-item')].every(n=>!n.hidden));
-  assert.equal(await p.locator('.route-item:visible').count(),6);
+  assert.equal(await p.locator('.route-item:visible').count(),9);
   await p.locator('#distance').selectOption('short');
-  assert.equal(await p.locator('.route-item:visible').count(),3);
+  assert.equal(await p.locator('.route-item:visible').count(),5);
   await p.locator('#difficulty').selectOption('easy');
-  assert.equal(await p.locator('.route-item:visible').count(),3);
+  assert.equal(await p.locator('.route-item:visible').count(),5);
   await p.locator('#search').fill('несуществующий маршрут');
   assert.equal(await p.locator('#empty-results').isVisible(),true);
   await p.close();
@@ -137,7 +137,10 @@ test('maps open automatically and mark the start of each route', async () => {
     sculptor: '92.73015,55.917567',
     laleto: '92.745867,55.951967',
     book: '92.7416,55.942233',
-    white: '92.723167,55.916917'
+    white: '92.723167,55.916917',
+    kazachiy: '41.285188,43.56018',
+    siberia: '92.723667,55.916533',
+    climate: '92.7768,55.946417'
   };
   await mockMap(page);
   for (const [id, start] of Object.entries(starts)) {
@@ -150,7 +153,7 @@ test('maps open automatically and mark the start of each route', async () => {
     assert.equal(url.searchParams.get('pt'), start + ',pm2rdm');
     assert.equal(await map.isVisible(), true);
     const gallery = page.locator('.route-gallery');
-    const photoCount = id === 'baduk' ? 1 : 2;
+    const photoCount = ['baduk', 'kazachiy', 'siberia', 'climate'].includes(id) ? 1 : 2;
     assert.equal(await gallery.locator('img').count(), photoCount);
     assert.equal(await gallery.locator('figcaption').count(), photoCount);
     await gallery.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
@@ -211,7 +214,7 @@ test('mobile menu, FAQ and packing checklist respond to input', async () => {
 
 test('without JavaScript content remains and submit stays disabled', async () => {
   const context=await browser.newContext({javaScriptEnabled:false}); const p=await context.newPage();
-  await p.goto(base+'catalog.html');assert.equal(await p.locator('.route-item').count(),6);
+  await p.goto(base+'catalog.html');assert.equal(await p.locator('.route-item').count(),9);
   await p.goto(base+'route.html?id=laleto');assert.equal(await p.locator('noscript').isVisible(),true);
   assert.equal(await p.locator('[type=submit]').isDisabled(),true);await context.close();
 });
@@ -229,9 +232,9 @@ test('theme persists and local accounts keep their own favorites and routes', as
   await p.getByRole('button', {name: 'Создать профиль'}).click();
   await p.locator('#account-profile').waitFor();
   await p.goto(base + 'catalog.html');
-  await p.getByRole('button', {name: 'В избранное: Бадукские озёра', exact: true}).click();
+  await p.getByRole('button', {name: 'В избранное: Казачий водопад', exact: true}).click();
   await p.goto(base + 'favorites.html');
-  assert.equal(await p.locator('#favorite-list h2').textContent(), 'Бадукские озёра');
+  assert.equal(await p.locator('#favorite-list h2').textContent(), 'Казачий водопад');
   await p.goto(base + 'account.html');
   await p.locator('#personal-title').fill('Моя тропа');
   await p.locator('#personal-region').fill('Подмосковье');
@@ -264,7 +267,7 @@ test('theme persists and local accounts keep their own favorites and routes', as
   await p.getByRole('button', {name: 'Войти', exact: true}).click();
   await p.locator('#account-profile').waitFor();
   await p.goto(base + 'favorites.html');
-  await p.getByRole('button', {name: 'Убрать из избранного: Бадукские озёра', exact: true}).click();
+  await p.getByRole('button', {name: 'Убрать из избранного: Казачий водопад', exact: true}).click();
   assert.equal(await p.locator('#favorites-empty').isVisible(), true);
   await p.close();
 });
@@ -289,6 +292,11 @@ test('site help answers quick questions and free text without sending messages',
   await input.fill('А сколько идти?');
   await input.press('Enter');
   assert.equal(await dialog.getByText(/Время: 1 ч 30 мин на посещение/).count(), 1);
+
+  await input.fill('Сколько идти по Заповедной Сибири?');
+  await input.press('Enter');
+  assert.equal(await dialog.getByRole('link', {name: 'Заповедная Сибирь'}).getAttribute('href'), 'route.html?id=siberia');
+  assert.equal(await dialog.getByText(/Время: 40 мин/).count(), 1);
 
   await input.fill('<img src=x onerror=alert(1)>');
   await input.press('Enter');

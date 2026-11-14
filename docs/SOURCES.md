@@ -30,6 +30,16 @@
 
 В `js/routes.js` порядок обратный — долгота, широта, как в URL встроенной Яндекс Карты. Карта загружается при открытии карточки и показывает точку старта.
 
+## Дополнение каталога
+
+Три записи сверены с паспортами и описаниями парков. Координаты в таблице указаны в порядке «широта, долгота».
+
+| Маршрут | Длина в одну сторону | Время по данным парка | Координаты начала |
+| --- | --- | --- | --- |
+| [Казачий водопад](https://tgpbz.ru/marshruty/kazachij-vodopad/) | 2,2 км | 1 ч 30 мин на посещение | 43.560180, 41.285188 |
+| [Заповедная Сибирь](https://kras-stolby.ru/posetitelyam/marshruty/ekotropa-zapovednaya-sibir-1/) | 150 м | 40 мин | 55.916533, 92.723667 |
+| [Природа и климат](https://kras-stolby.ru/posetitelyam/marshruty/ekotropa-priroda-i-klimat-1/) | 580 м | 1 ч | 55.946417, 92.7768 |
+
 ## Фотографии
 
 Пейзажи на главной используются как иллюстрации по [Unsplash License](https://unsplash.com/license). В карточках четырёх маршрутов показаны реальные места. Для «Книги природы» и «Белой тропы» использованы снимки наблюдений природы рядом с тропами. В карточках и парных галереях фотографии кадрируются стилями страницы. Их уменьшенные копии опубликованы на условиях исходных лицензий.
@@ -50,6 +60,9 @@
 | `images/laleto-raspberry.jpg` | [Малина, наблюдение №272881114](https://www.inaturalist.org/observations/272881114), рядом с кордоном | Oleg Kosterin, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/490878513) |
 | `images/book-fern.jpg` | [Папоротник, наблюдение №175859336](https://www.inaturalist.org/observations/175859336), в долине Лалетины | Илья Руденко, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/305667948) |
 | `images/white-stellaria.jpg` | [Звездчатка, наблюдение №375128190](https://www.inaturalist.org/observations/375128190), в окрестностях «Белой тропы» | Tatyana Petrenko, CC BY по [карточке фотографии](https://www.inaturalist.org/photos/685737142) |
+| `images/kazachiy.jpg` | [Горы у посёлка Архыз](https://commons.wikimedia.org/wiki/File:Arkhyz,_mountains_P5100539_2350.jpg), рядом с началом маршрута | Alexxx1979, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `images/siberia.jpg` | [Большой пёстрый дятел](https://commons.wikimedia.org/wiki/File:Dendrocopos_major_108591347.jpg), наблюдение в окрестностях комплекса «Нарым» | Andrew Bazdyrev, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `images/climate.jpg` | [Тропа у канатной дороги](https://commons.wikimedia.org/wiki/File:Krasnoyarskie_stolby_park_2020-08_2.jpg) | Svetlov Artem, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Советы на странице подготовки сверены с [памяткой NPS по снаряжению](https://www.nps.gov/articles/10essentials.htm), [памяткой NPS по планированию похода](https://www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm) и [правилами «Красноярских Столбов»](https://kras-stolby.ru/posetitelyam/pravila-posescheniya/).
 

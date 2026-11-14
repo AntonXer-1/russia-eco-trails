@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Шесть маршрутов национальных парков с поиском и фильтрами по длине и условной сложности.">
+  <meta name="description" content="Девять маршрутов национальных парков с поиском и фильтрами по длине и условной сложности.">
   <title>Каталог маршрутов — Экотропы России</title>
   <script src="js/theme.js?v=20261113"></script>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css?v=20261114">
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/routes.js?v=20261111h" defer></script>
+  <script src="js/routes.js?v=20261114b" defer></script>
   <script src="js/main.js?v=20261113" defer></script>
   <script src="js/profile.js?v=20261113" defer></script>
-  <script src="js/help.js?v=20261114" defer></script>
+  <script src="js/help.js?v=20261114b" defer></script>
 </head>
 <body id="top">
   <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
@@ -54,7 +54,7 @@
         <div class="col-12 col-md-4 col-lg-2"><button class="btn btn-outline-secondary w-100" type="reset" disabled>Сбросить</button></div>
       </div>
     </form>
-    <p id="results-count" role="status">Найдено маршрутов: 6</p>
+    <p id="results-count" role="status">Найдено маршрутов: 9</p>
     <div class="alert alert-info" id="empty-results" hidden>По вашему запросу ничего не найдено. Измените условия или нажмите «Сбросить».</div>
     <div class="row g-4" id="routes"><div class="col-12 col-md-6 col-lg-4 route-item" data-name="бадукские озёра карачаево-черкесия" data-difficulty="medium" data-distance="3.5">
         <article class="card h-100">
@@ -163,7 +163,62 @@
             </div>
           </div>
         </article>
-      </div></div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 route-item" data-name="казачий водопад карачаево-черкесия" data-difficulty="medium" data-distance="2.2">
+        <article class="card h-100">
+          <figure class="mb-0">
+            <img class="card-img-top catalog-photo" src="images/kazachiy.jpg" width="960" height="640" alt="Горы у посёлка Архыз, рядом с началом маршрута" loading="lazy">
+            <figcaption class="small text-secondary px-3 pt-2">Горы у посёлка Архыз, рядом с началом маршрута · Alexxx1979 · CC BY-SA 4.0</figcaption>
+          </figure>
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Карачаево-Черкесия</p>
+            <h2 class="card-title h5">Казачий водопад</h2>
+            <p><span class="badge text-bg-body-tertiary border">Средняя</span> <span class="small">2,2 км в одну сторону</span></p>
+            <p class="card-text">Пеший маршрут от Архызской усадьбы через Казачью поляну к водопаду.</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=kazachiy">Подробнее<span class="visually-hidden">: Казачий водопад</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="kazachiy" disabled>♡ В избранное</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 route-item" data-name="заповедная сибирь красноярский край" data-difficulty="easy" data-distance="0.15">
+        <article class="card h-100">
+          <figure class="mb-0">
+            <img class="card-img-top catalog-photo" src="images/siberia.jpg" width="960" height="720" alt="Большой пёстрый дятел в окрестностях экотропы" loading="lazy">
+            <figcaption class="small text-secondary px-3 pt-2">Большой пёстрый дятел в окрестностях экотропы · Andrew Bazdyrev · CC BY 4.0</figcaption>
+          </figure>
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Красноярский край</p>
+            <h2 class="card-title h5">Заповедная Сибирь</h2>
+            <p><span class="badge text-bg-body-tertiary border">Лёгкая</span> <span class="small">150 м в одну сторону</span></p>
+            <p class="card-text">Познавательная экотропа на территории комплекса «Нарым» с площадками о заповедниках и природных парках Сибири.</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=siberia">Подробнее<span class="visually-hidden">: Заповедная Сибирь</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="siberia" disabled>♡ В избранное</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 route-item" data-name="природа и климат красноярский край" data-difficulty="easy" data-distance="0.58">
+        <article class="card h-100">
+          <figure class="mb-0">
+            <img class="card-img-top catalog-photo" src="images/climate.jpg" width="960" height="636" alt="Тропа у канатной дороги в «Красноярских Столбах»" loading="lazy">
+            <figcaption class="small text-secondary px-3 pt-2">Тропа у канатной дороги в «Красноярских Столбах» · Svetlov Artem · CC0</figcaption>
+          </figure>
+          <div class="card-body d-flex flex-column">
+            <p class="small text-secondary mb-2">Красноярский край</p>
+            <h2 class="card-title h5">Природа и климат</h2>
+            <p><span class="badge text-bg-body-tertiary border">Лёгкая</span> <span class="small">580 м в одну сторону</span></p>
+            <p class="card-text">Настильная тропа со смотровыми площадками и стендами о климате и птицах «Красноярских Столбов».</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto">
+              <a class="btn btn-outline-success mt-auto align-self-start" href="route.html?id=climate">Подробнее<span class="visually-hidden">: Природа и климат</span></a>
+              <button class="btn btn-outline-secondary" type="button" data-favorite="climate" disabled>♡ В избранное</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </main>
   <footer class="bg-body-tertiary border-top py-4" id="contacts">
     <div class="container">
