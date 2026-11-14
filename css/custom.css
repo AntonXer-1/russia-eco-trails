@@ -117,3 +117,52 @@ html { scroll-padding-top: 5rem; }
   h1 { font-size: 1.9rem; }
   .navbar-brand { font-size: 1.1rem; }
 }
+
+.help-open {
+  position: fixed;
+  right: 1rem;
+  bottom: 4.25rem;
+  z-index: 1025;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.help-dialog {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+  margin: 0;
+  padding: 0;
+  width: min(26rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+}
+
+.help-dialog[open] { display: flex; flex-direction: column; }
+.help-dialog::backdrop { background: rgb(0 0 0 / 25%); }
+.help-log {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-height: 4rem;
+  height: min(17rem, 35dvh);
+  overflow-y: auto;
+}
+.help-controls { flex-shrink: 0; }
+.help-controls input { min-width: 0; }
+.help-message {
+  align-self: flex-start;
+  max-width: 92%;
+  padding: .55rem .75rem;
+  border-radius: .65rem;
+  background: var(--bs-tertiary-bg);
+  overflow-wrap: anywhere;
+  font-size: .9rem;
+}
+.help-message--user {
+  align-self: flex-end;
+  background: var(--bs-success-bg-subtle);
+  color: var(--bs-success-text-emphasis);
+}

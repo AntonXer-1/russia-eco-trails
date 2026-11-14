@@ -268,3 +268,36 @@ test('theme persists and local accounts keep their own favorites and routes', as
   assert.equal(await p.locator('#favorites-empty').isVisible(), true);
   await p.close();
 });
+
+test('site help answers quick questions and free text without sending messages', async () => {
+  const page = await browser.newPage({viewport: {width: 375, height: 600}});
+  const external = [];
+  page.on('request', request => {
+    if (!request.url().startsWith(base)) external.push(request.url());
+  });
+  await page.goto(base + 'catalog.html');
+  const toggle = page.getByRole('button', {name: 'Открыть помощника'});
+  await toggle.click();
+  const dialog = page.getByRole('dialog', {name: 'Помощник по маршрутам'});
+  await dialog.getByRole('button', {name: 'Что взять с собой?', exact: true}).click();
+  assert.equal(await dialog.getByRole('link', {name: 'Подготовка к прогулке'}).getAttribute('href'), 'preparation.html');
+
+  const input = dialog.getByRole('textbox', {name: 'Ваш вопрос'});
+  await input.fill('Нужен ли билет на Шумку?');
+  await input.press('Enter');
+  assert.equal(await dialog.getByRole('link', {name: 'Водопад Шумка'}).last().getAttribute('href'), 'route.html?id=shumka');
+  await input.fill('А сколько идти?');
+  await input.press('Enter');
+  assert.equal(await dialog.getByText(/Время: 1 ч 30 мин на посещение/).count(), 1);
+
+  await input.fill('<img src=x onerror=alert(1)>');
+  await input.press('Enter');
+  assert.equal(await dialog.locator('img').count(), 0);
+  assert.equal(await dialog.getByRole('link', {name: 'Написать автору'}).getAttribute('href'), 'mailto:antonmister6@gmail.com');
+  assert.deepEqual(external, []);
+
+  await page.keyboard.press('Escape');
+  await dialog.waitFor({state: 'hidden'});
+  await page.waitForFunction(() => document.activeElement.id === 'help-open');
+  await page.close();
+});
